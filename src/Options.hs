@@ -96,7 +96,7 @@ data LogSelection =
   All | AST | BodyBuilder | Builder | Clause | Expansion | FinalDump
   | Flatten | Normalise | Optimise | Resources | Types
   | Unbranch | Codegen | Blocks | Emit | Analysis | Transform | Uniqueness
-  | LastCallAnalysis
+  | LastCallAnalysis | DetAnalysis
   deriving (Eq, Ord, Bounded, Enum, Show, Read)
 
 instance Toggleable LogSelection where
@@ -161,7 +161,8 @@ logSelectionDescription Uniqueness
     = "Log uniqueness checking"
 logSelectionDescription LastCallAnalysis
     = "Log last call analysis"
-
+logSelectionDescription DetAnalysis
+    = "Log determinism analysis"
 
 -- | Enumeration of compiler optimisations
 data OptFlag = LLVMOpt | MultiSpecz | TailCallModCons

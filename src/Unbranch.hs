@@ -404,10 +404,10 @@ unbranchStmt :: Determinism -> Stmt -> OptPos -> [Placed Stmt] -> [Placed Stmt]
 unbranchStmt _ stmt@(ProcCall _ _ True args) _ _ _ _ =
     shouldnt $ "Resources should have been handled before unbranching: "
                ++ showStmt 4 stmt
-unbranchStmt context stmt@(ProcCall _ SemiDet _ _) _ _ _ _
+{-unbranchStmt context stmt@(ProcCall _ SemiDet _ _) _ _ _ _
   | context < SemiDet
   = shouldnt $ "SemiDet proc call " ++ show stmt
-               ++ " in a " ++ show context ++ " context"
+               ++ " in a " ++ show context ++ " context"-}
 unbranchStmt SemiDet stmt@(ProcCall func SemiDet _ args) pos
              stmts alt sense = do
     logUnbranch $ "converting SemiDet proc call" ++ show stmt
@@ -434,8 +434,8 @@ unbranchStmt detism stmt@(ProcCall func calldetism r args) pos stmts alt
     case calldetism of
       Terminal -> return [maybePlace stmt' pos] -- no execution after Terminal
       Failure  -> return [maybePlace stmt' pos] -- no execution after Failure
-      Det      -> leaveStmtAsIs detism stmt' pos stmts alt sense
-      SemiDet  -> shouldnt "SemiDet case already covered!"
+      _      -> leaveStmtAsIs detism stmt' pos stmts alt sense
+      --SemiDet  -> shouldnt "SemiDet case already covered!"
 unbranchStmt detism stmt@(ForeignCall l nm fs args) pos stmts alt sense = do
     logUnbranch $ "Unbranching foreign call " ++ showStmt 4 stmt
     args' <- unbranchExps args

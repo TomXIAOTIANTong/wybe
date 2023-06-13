@@ -1,8 +1,8 @@
 # if case
 
-pub type tree { pub constructors empty | node(left:tree, key:int, right:tree) }
+pub type tree { pub constructors empty | node(left:_, key:int, right:_) }
 
-pub def lookup(key:int, tree:tree, ?result:bool) {
+pub def lookup(key:int, tree:_, ?result:bool) {
     if { tree = empty:: ?result = false
        |  key = tree^key:: ?result = true
        |  key < tree^key:: lookup(key, tree^left, ?result) # mode error

@@ -235,6 +235,7 @@ import           Types                     (typeCheckModSCC,
 import           Unbranch                  (unbranchProc)
 import           Util                      (sccElts, useLocalCacheFileIfPossible)
 import           Snippets
+import           DetAnalysis
 import           Text.Parsec.Error
 import           BinaryFactory
 import qualified Data.ByteString.Char8 as BS
@@ -843,6 +844,11 @@ compileModSCC mspecs = do
     fixpointProcessSCC optimiseMod mspecs
     stopOnError $ "optimising " ++ showModSpecs mspecs
     logDump Optimise Optimise "OPTIMISATION"
+    ----------------------------------
+    -- DETERMINISM ANALYSIS
+    mapM_ determinismAnalyseMod mspecs
+    stopOnError $ "determinism analysing " ++ showModSpecs mspecs
+    logDump DetAnalysis Analysis "DETERMINISM ANALYSIS"
     ----------------------------------
     -- ANALYSIS
     -- MODULE LEVEL ALIAS ANALYSIS - FIND FIXED POINT

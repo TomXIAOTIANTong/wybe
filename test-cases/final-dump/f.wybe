@@ -1,0 +1,5 @@
+def f(x:int):string =
+    if { x < 0 :: "negative"
+       | x = 0 :: "zero"
+       | x > 0 :: "positive"
+    }
