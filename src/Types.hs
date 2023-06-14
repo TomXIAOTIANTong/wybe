@@ -255,10 +255,6 @@ data TypeError = ReasonMessage Message
                    -- ^ Expression does not have correct higher type
                | ReasonPartialFlow ProcName ProcName Int FlowDirection OptPos
                    -- ^ ProcSpec does not have the correct type, in context
-               -- | ReasonDeterminism String Determinism Determinism OptPos
-                   -- ^Calling a proc in a more deterministic context
-               -- | ReasonWeakDetism String Determinism Determinism OptPos
-                   -- ^Actual determinism of proc body weaker than declared
                | ReasonPurity String Impurity Impurity OptPos
                    -- ^Calling a proc or foreign in a more pure context
                | ReasonLooksPure ProcName Impurity OptPos
@@ -390,14 +386,6 @@ typeErrorMessage (ReasonPartialFlow from to idx flow pos) =
         "Partial application of " ++ to ++ " in "
         ++ showProcName from ++ " has flow " ++ flowPrefix flow
         ++ " but should be an input."
-{-typeErrorMessage (ReasonDeterminism name stmtDetism contextDetism pos) =
-    Message Error pos $
-        "Calling " ++ determinismFullName stmtDetism ++ " " ++ name
-        ++ " in a " ++ determinismFullName contextDetism ++ " context"
-typeErrorMessage (ReasonWeakDetism name actualDetism expectedDetism pos) =
-    Message Error pos $
-        name ++ " has " ++ determinismFullName actualDetism
-        ++ " determinism, but declared " ++ determinismFullName expectedDetism-}
 typeErrorMessage (ReasonPurity descrip stmtPurity contextPurity pos) =
     Message Error pos $
         "Calling " ++ impurityFullName stmtPurity ++ " " ++ descrip
@@ -498,8 +486,6 @@ typeErrorPos (ReasonExpType _ _ pos) = pos
 typeErrorPos (ReasonHigher _ _ pos) = pos
 typeErrorPos (ReasonHigherFlow _ _ _ _ _ pos) = pos
 typeErrorPos (ReasonPartialFlow _ _ _ _ pos) = pos
-{-typeErrorPos (ReasonDeterminism _ _ _ pos) = pos
-typeErrorPos (ReasonWeakDetism _ _ _ pos) = pos-}
 typeErrorPos (ReasonPurity _ _ _ pos) = pos
 typeErrorPos (ReasonLooksPure _ _ pos) = pos
 typeErrorPos (ReasonForeignLanguage _ _ pos) = pos
@@ -1957,8 +1943,6 @@ modecheckStmts :: ModSpec -> ProcName -> OptPos -> BindingState -> Determinism
                -> Bool -> [Placed Stmt] -> Typed ([Placed Stmt],BindingState)
 modecheckStmts _ name pos assigned detism final [] = do
     logTyped $ "Mode check end of " ++ show detism ++ " proc '" ++ name ++ "'"
-    {-when final
-        $ typeErrors $ detismCheck name pos detism $ bindingDetism assigned-}
     return ([],assigned)
 modecheckStmts m name pos assigned detism final (pstmt:pstmts) = do
     logTyped $ "Mode check stmt " ++ showStmt 16 (content pstmt)
@@ -2099,10 +2083,7 @@ modecheckStmt m name defPos assigned detism final
             let impurity = bindingImpurity assigned
             let stmtDetism = flagsDetism flags
             let foreignIdent = "foreign " ++ cname
-            let errs = {-[ReasonDeterminism foreignIdent stmtDetism detism pos
-                       | Det `determinismLEQ` detism
-                         && not (stmtDetism `determinismLEQ` detism)]
-                       ++ -} [ReasonPurity foreignIdent actualImpurity impurity pos
+            let errs = [ReasonPurity foreignIdent actualImpurity impurity pos
                           | actualImpurity > impurity]
             typeErrors errs
             let args'' = zipWith setPExpTypeFlow typeflows args'
@@ -2434,10 +2415,7 @@ detismPurityErrors pos prefix name contextDetism contextImpurity
     -- can work out if the test is certain to succeed.
     -- Perhaps add mutual exclusion inference to the mode
     -- checker.
-    {-[ReasonDeterminism prefixedName detism contextDetism pos
-    | Det `determinismLEQ` contextDetism
-        && not (detism `determinismLEQ` contextDetism)]
-    ++ -}[ReasonPurity prefixedName impurity contextImpurity pos
+    [ReasonPurity prefixedName impurity contextImpurity pos
         | impurity > contextImpurity]
     ++ [ReasonLooksPure prefixedName impurity pos
         | impurity > Pure && not banged]
@@ -2475,17 +2453,6 @@ matchArgument typeflow arg
           return (setVar, [maybePlace call $ place arg])
     | otherwise = return (setPExpTypeFlow typeflow arg,[])
 
-{-
--- |Return a list of error messages for too weak a determinism at the end of a
--- statement sequence.
-detismCheck :: ProcName -> OptPos -> Determinism -> Determinism -> [TypeError]
-detismCheck name pos expectedDetism actualDetism
-    -- XXX Report ReasonUndeclaredTerminal if appropriate, when terminalness is
-    -- analysed correctly.
-    | actualDetism `determinismLEQ` expectedDetism = []
-    | Det `determinismLEQ` expectedDetism = []
-    | otherwise = [ReasonWeakDetism name actualDetism expectedDetism pos]
--}
 
 ----------------------------------------------------------------
 --                    Check foreign calls
