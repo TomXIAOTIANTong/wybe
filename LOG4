@@ -1,0 +1,151 @@
+======================================================================
+AFTER COMPILATION TO LPVM:
+ Module bad
+  representation  : (not a type)
+  public submods  : 
+  public resources: 
+  public procs    : 
+  imports         : use wybe
+  resources       : 
+  procs           : 
+
+bad > (0 calls)
+0: bad.bad<0>
+bad(x##0:wybe.int, ?y##0:wybe.int, ?#success##0:wybe.bool)<{}; {}; {}>:
+  AliasPairs: []
+  InterestingCallProperties: []
+    wybe.int.<<0>(x##0:wybe.int, 0:wybe.int, ?tmp#0##0:wybe.bool) #0 @bad:1:33
+    case tmp#0##0:wybe.bool of
+    0:
+        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm move(undef:wybe.int, ?y##0:wybe.int)
+
+    1:
+        foreign llvm move(0:wybe.int, ?y##0:wybe.int) @bad:1:42
+        foreign llvm move(1:wybe.bool, ?#success##0:wybe.bool)
+
+
+LLVM code       : None
+
+[1mOptimise: [0mOptimise SCCs:
+[1mOptimise: [0m[bad.bad<0>]
+[1mOptimise: [0mInferring global flows of bad(x##0:wybe.int, ?y##0:wybe.int, ?#success##0:wybe.bool)<{}; {}; {}>
+[1mOptimise: [0m---> <{}; {}; {}> (<{}; {}; {}>)
+[1mOptimise: [0m
+[1mOptimise: [0m>>> Optimise (Bottom-up) bad.bad<0>
+[1mOptimise: [0m*** bad.bad<0> before optimisation:
+[1mOptimise: [0mbad > (0 calls)
+[1mOptimise: [0m4: bad.bad<0>
+[1mOptimise: [0mbad(x##0:wybe.int, ?y##0:wybe.int, ?#success##0:wybe.bool)<{}; {}; {}>:
+[1mOptimise: [0m  AliasPairs: []
+[1mOptimise: [0m  InterestingCallProperties: []
+[1mOptimise: [0m    wybe.int.<<0>(x##0:wybe.int, 0:wybe.int, ?tmp#0##0:wybe.bool) #0 @bad:1:33
+[1mOptimise: [0m    case tmp#0##0:wybe.bool of
+[1mOptimise: [0m    0:
+[1mOptimise: [0m        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+[1mOptimise: [0m        foreign llvm move(undef:wybe.int, ?y##0:wybe.int)
+[1mOptimise: [0m
+[1mOptimise: [0m    1:
+[1mOptimise: [0m        foreign llvm move(0:wybe.int, ?y##0:wybe.int) @bad:1:42
+[1mOptimise: [0m        foreign llvm move(1:wybe.bool, ?#success##0:wybe.bool)
+[1mOptimise: [0m*** bad.bad<0> after optimisation:
+[1mOptimise: [0mbad > (0 calls)
+[1mOptimise: [0m4: bad.bad<0>
+[1mOptimise: [0mbad(x##0:wybe.int, ?y##0:wybe.int, ?#success##0:wybe.bool)<{}; {}; {}>:
+[1mOptimise: [0m  AliasPairs: []
+[1mOptimise: [0m  InterestingCallProperties: []
+[1mOptimise: [0m    foreign llvm icmp_slt(~x##0:wybe.int, 0:wybe.int, ?tmp#0##0:wybe.bool) @int:87:29
+[1mOptimise: [0m    case ~tmp#0##0:wybe.bool of
+[1mOptimise: [0m    0:
+[1mOptimise: [0m        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+[1mOptimise: [0m        foreign llvm move(undef:wybe.int, ?y##0:wybe.int)
+[1mOptimise: [0m
+[1mOptimise: [0m    1:
+[1mOptimise: [0m        foreign llvm move(0:wybe.int, ?y##0:wybe.int) @bad:1:42
+[1mOptimise: [0m        foreign llvm move(1:wybe.bool, ?#success##0:wybe.bool)
+[1mOptimise: [0m
+[1mOptimise: [0mInferring global flows of bad(x##0:wybe.int, ?y##0:wybe.int, ?#success##0:wybe.bool)<{}; {}; {}>
+[1mOptimise: [0m---> <{}; {}; {}> (<{}; {}; {}>)
+======================================================================
+AFTER OPTIMISATION:
+ Module bad
+  representation  : (not a type)
+  public submods  : 
+  public resources: 
+  public procs    : 
+  imports         : use wybe
+  resources       : 
+  procs           : 
+
+bad > (0 calls)
+0: bad.bad<0>
+bad(x##0:wybe.int, ?y##0:wybe.int, ?#success##0:wybe.bool)<{}; {}; {}>:
+  AliasPairs: []
+  InterestingCallProperties: []
+    foreign llvm icmp_slt(~x##0:wybe.int, 0:wybe.int, ?tmp#0##0:wybe.bool) @int:87:29
+    case ~tmp#0##0:wybe.bool of
+    0:
+        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm move(undef:wybe.int, ?y##0:wybe.int)
+
+    1:
+        foreign llvm move(0:wybe.int, ?y##0:wybe.int) @bad:1:42
+        foreign llvm move(1:wybe.bool, ?#success##0:wybe.bool)
+
+
+LLVM code       : None
+
+======================================================================
+AFTER EVERYTHING:
+ Module bad
+  representation  : (not a type)
+  public submods  : 
+  public resources: 
+  public procs    : 
+  imports         : use wybe
+  resources       : 
+  procs           : 
+
+bad > (0 calls)
+0: bad.bad<0>
+bad(x##0:wybe.int, ?y##0:wybe.int, ?#success##0:wybe.bool)<{}; {}; {}>:
+  AliasPairs: []
+  InterestingCallProperties: []
+    foreign llvm icmp_slt(~x##0:wybe.int, 0:wybe.int, ?tmp#0##0:wybe.bool) @int:87:29
+    case ~tmp#0##0:wybe.bool of
+    0:
+        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm move(undef:wybe.int, ?y##0:wybe.int)
+
+    1:
+        foreign llvm move(0:wybe.int, ?y##0:wybe.int) @bad:1:42
+        foreign llvm move(1:wybe.bool, ?#success##0:wybe.bool)
+
+
+  LLVM code       :
+
+; ModuleID = 'bad'
+
+
+ 
+
+
+declare external ccc  i8* @wybe_malloc(i32)    
+
+
+declare external ccc  void @llvm.memcpy.p0i8.p0i8.i32(i8*, i8*, i32, i1)    
+
+
+define external fastcc  {i64, i1} @"bad.bad<0>"(i64  %"x##0")    {
+entry:
+  %0 = icmp slt i64 %"x##0", 0 
+  br i1 %0, label %if.then, label %if.else 
+if.then:
+  %1 = insertvalue {i64, i1} undef, i64 0, 0 
+  %2 = insertvalue {i64, i1} %1, i1 1, 1 
+  ret {i64, i1} %2 
+if.else:
+  %3 = insertvalue {i64, i1} undef, i64 undef, 0 
+  %4 = insertvalue {i64, i1} %3, i1 0, 1 
+  ret {i64, i1} %4 
+}

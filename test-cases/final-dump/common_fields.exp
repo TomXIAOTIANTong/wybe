@@ -37,51 +37,51 @@ module top-level code > public {semipure} (0 calls)
   AliasPairs: []
   InterestingCallProperties: []
   MultiSpeczDepInfo: [(6,(common_fields.id<1>,fromList [NonAliasedParamCond 0 []])),(16,(wybe.string.print<0>,fromList [NonAliasedParamCond 0 []]))]
-    foreign lpvm alloc(32:wybe.int, ?tmp#14##0:common_fields) @common_fields:nn:nn
-    foreign lpvm mutate(~tmp#14##0:common_fields, ?tmp#15##0:common_fields, 0:wybe.int, 1:wybe.int, 32:wybe.int, 0:wybe.int, "a":wybe.string) @common_fields:nn:nn
-    foreign lpvm mutate(~tmp#15##0:common_fields, ?tmp#16##0:common_fields, 8:wybe.int, 1:wybe.int, 32:wybe.int, 0:wybe.int, "b":wybe.string) @common_fields:nn:nn
-    foreign lpvm mutate(~tmp#16##0:common_fields, ?tmp#17##0:common_fields, 16:wybe.int, 1:wybe.int, 32:wybe.int, 0:wybe.int, "c":wybe.string) @common_fields:nn:nn
-    foreign lpvm mutate(~tmp#17##0:common_fields, ?tmp#0##0:common_fields, 24:wybe.int, 1:wybe.int, 32:wybe.int, 0:wybe.int, 0:wybe.int) @common_fields:nn:nn
-    foreign lpvm alloc(24:wybe.int, ?tmp#21##0:common_fields) @common_fields:nn:nn
-    foreign lpvm mutate(~tmp#21##0:common_fields, ?tmp#22##0:common_fields, 0:wybe.int, 1:wybe.int, 24:wybe.int, 0:wybe.int, "b":wybe.string) @common_fields:nn:nn
-    foreign lpvm mutate(~tmp#22##0:common_fields, ?tmp#23##0:common_fields, 8:wybe.int, 1:wybe.int, 24:wybe.int, 0:wybe.int, 0:wybe.int) @common_fields:nn:nn
-    foreign lpvm mutate(~tmp#23##0:common_fields, ?tmp#24##0:common_fields, 16:wybe.int, 1:wybe.int, 24:wybe.int, 0:wybe.int, 1:wybe.int) @common_fields:nn:nn
-    foreign llvm or(~tmp#24##0:common_fields, 1:wybe.int, ?tmp#1##0:common_fields) @common_fields:nn:nn
+    foreign lpvm alloc(32:wybe.int, ?tmp#11##0:common_fields) @common_fields:nn:nn
+    foreign lpvm mutate(~tmp#11##0:common_fields, ?tmp#12##0:common_fields, 0:wybe.int, 1:wybe.int, 32:wybe.int, 0:wybe.int, "a":wybe.string) @common_fields:nn:nn
+    foreign lpvm mutate(~tmp#12##0:common_fields, ?tmp#13##0:common_fields, 8:wybe.int, 1:wybe.int, 32:wybe.int, 0:wybe.int, "b":wybe.string) @common_fields:nn:nn
+    foreign lpvm mutate(~tmp#13##0:common_fields, ?tmp#14##0:common_fields, 16:wybe.int, 1:wybe.int, 32:wybe.int, 0:wybe.int, "c":wybe.string) @common_fields:nn:nn
+    foreign lpvm mutate(~tmp#14##0:common_fields, ?tmp#0##0:common_fields, 24:wybe.int, 1:wybe.int, 32:wybe.int, 0:wybe.int, 0:wybe.int) @common_fields:nn:nn
+    foreign lpvm alloc(24:wybe.int, ?tmp#18##0:common_fields) @common_fields:nn:nn
+    foreign lpvm mutate(~tmp#18##0:common_fields, ?tmp#19##0:common_fields, 0:wybe.int, 1:wybe.int, 24:wybe.int, 0:wybe.int, "b":wybe.string) @common_fields:nn:nn
+    foreign lpvm mutate(~tmp#19##0:common_fields, ?tmp#20##0:common_fields, 8:wybe.int, 1:wybe.int, 24:wybe.int, 0:wybe.int, 0:wybe.int) @common_fields:nn:nn
+    foreign lpvm mutate(~tmp#20##0:common_fields, ?tmp#21##0:common_fields, 16:wybe.int, 1:wybe.int, 24:wybe.int, 0:wybe.int, 1:wybe.int) @common_fields:nn:nn
+    foreign llvm or(~tmp#21##0:common_fields, 1:wybe.int, ?tmp#1##0:common_fields) @common_fields:nn:nn
     common_fields.title<0>(tmp#0##0:common_fields, ?tmp#2##0:wybe.string) #2 @common_fields:nn:nn
     wybe.string.print<0>(~tmp#2##0:wybe.string)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #14 @string:nn:nn
-    foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#26##0:wybe.phantom) @io:nn:nn
-    foreign c putchar('\n':wybe.char, ~tmp#26##0:wybe.phantom, ?tmp#27##0:wybe.phantom) @io:nn:nn
+    foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#23##0:wybe.phantom) @io:nn:nn
+    foreign c putchar('\n':wybe.char, ~tmp#23##0:wybe.phantom, ?tmp#24##0:wybe.phantom) @io:nn:nn
     common_fields.id<0>(tmp#1##0:common_fields, ?tmp#3##0:wybe.int) #4 @common_fields:nn:nn
-    foreign c print_int(~tmp#3##0:wybe.int, ~tmp#27##0:wybe.phantom, ?tmp#30##0:wybe.phantom) @int:nn:nn
-    foreign c putchar('\n':wybe.char, ~tmp#30##0:wybe.phantom, ?tmp#31##0:wybe.phantom) @io:nn:nn
+    foreign c print_int(~tmp#3##0:wybe.int, ~tmp#24##0:wybe.phantom, ?tmp#27##0:wybe.phantom) @int:nn:nn
+    foreign c putchar('\n':wybe.char, ~tmp#27##0:wybe.phantom, ?tmp#28##0:wybe.phantom) @io:nn:nn
     common_fields.id<1>[410bae77d3](~tmp#1##0:common_fields, ?c##1:common_fields, 10:wybe.int) #6 @common_fields:nn:nn
     common_fields.id<0>(~c##1:common_fields, ?tmp#4##0:wybe.int) #7 @common_fields:nn:nn
-    foreign c print_int(~tmp#4##0:wybe.int, ~tmp#31##0:wybe.phantom, ?tmp#34##0:wybe.phantom) @int:nn:nn
-    foreign c putchar('\n':wybe.char, ~tmp#34##0:wybe.phantom, ?tmp#35##0:wybe.phantom) @io:nn:nn
-    foreign lpvm store(~%tmp#35##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
-    common_fields.genre<0>(tmp#0##0:common_fields, ?tmp#5##0:wybe.string, ?tmp#8##0:wybe.bool) #9 @common_fields:nn:nn
-    case ~tmp#8##0:wybe.bool of
+    foreign c print_int(~tmp#4##0:wybe.int, ~tmp#28##0:wybe.phantom, ?tmp#31##0:wybe.phantom) @int:nn:nn
+    foreign c putchar('\n':wybe.char, ~tmp#31##0:wybe.phantom, ?tmp#32##0:wybe.phantom) @io:nn:nn
+    foreign lpvm store(~%tmp#32##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
+    common_fields.genre<0>(tmp#0##0:common_fields, ?tmp#5##0:wybe.string, ?#success##0:wybe.bool) #9 @common_fields:nn:nn
+    case ~#success##0:wybe.bool of
     0:
 
     1:
-        common_fields.genre<1>(~tmp#0##0:common_fields, ?b##1:common_fields, "g":wybe.string, ?tmp#9##0:wybe.bool) #10 @common_fields:nn:nn
-        case ~tmp#9##0:wybe.bool of
+        common_fields.genre<1>(~tmp#0##0:common_fields, ?b##1:common_fields, "g":wybe.string, ?#success##1:wybe.bool) #10 @common_fields:nn:nn
+        case ~#success##1:wybe.bool of
         0:
 
         1:
             wybe.string.print<0>(~tmp#5##0:wybe.string)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #15 @string:nn:nn
-            foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#37##0:wybe.phantom) @io:nn:nn
-            foreign c putchar('\n':wybe.char, ~tmp#37##0:wybe.phantom, ?tmp#38##0:wybe.phantom) @io:nn:nn
-            foreign lpvm store(~%tmp#38##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
-            common_fields.genre<0>(~b##1:common_fields, ?tmp#6##0:wybe.string, ?tmp#7##0:wybe.bool) #12 @common_fields:nn:nn
-            case ~tmp#7##0:wybe.bool of
+            foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#34##0:wybe.phantom) @io:nn:nn
+            foreign c putchar('\n':wybe.char, ~tmp#34##0:wybe.phantom, ?tmp#35##0:wybe.phantom) @io:nn:nn
+            foreign lpvm store(~%tmp#35##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
+            common_fields.genre<0>(~b##1:common_fields, ?tmp#6##0:wybe.string, ?#success##2:wybe.bool) #12 @common_fields:nn:nn
+            case ~#success##2:wybe.bool of
             0:
 
             1:
                 wybe.string.print<0>[410bae77d3](~tmp#6##0:wybe.string)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #16 @string:nn:nn
-                foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#40##0:wybe.phantom) @io:nn:nn
-                foreign c putchar('\n':wybe.char, ~tmp#40##0:wybe.phantom, ?tmp#41##0:wybe.phantom) @io:nn:nn
-                foreign lpvm store(~%tmp#41##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
+                foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#37##0:wybe.phantom) @io:nn:nn
+                foreign c putchar('\n':wybe.char, ~tmp#37##0:wybe.phantom, ?tmp#38##0:wybe.phantom) @io:nn:nn
+                foreign lpvm store(~%tmp#38##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
 
 
 
@@ -89,49 +89,49 @@ module top-level code > public {semipure} (0 calls)
 
 = > public (1 calls)
 0: common_fields.=<0>
-=(#left##0:common_fields, #right##0:common_fields, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:common_fields, #right##0:common_fields, ?#success##8:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm and(#left##0:wybe.int, 3:wybe.int, ?tmp#23##0:wybe.int)
-    case ~tmp#23##0:wybe.int of
+    foreign llvm and(#left##0:wybe.int, 3:wybe.int, ?tmp#2##0:wybe.int)
+    case ~tmp#2##0:wybe.int of
     0:
         foreign lpvm access(#left##0:common_fields, 0:wybe.int, 32:wybe.int, 0:wybe.int, ?#left#title##0:wybe.string) @common_fields:nn:nn
         foreign lpvm access(#left##0:common_fields, 8:wybe.int, 32:wybe.int, 0:wybe.int, ?#left#author##0:wybe.string) @common_fields:nn:nn
         foreign lpvm access(#left##0:common_fields, 16:wybe.int, 32:wybe.int, 0:wybe.int, ?#left#genre##0:wybe.string) @common_fields:nn:nn
         foreign lpvm access(~#left##0:common_fields, 24:wybe.int, 32:wybe.int, 0:wybe.int, ?#left#id##0:wybe.int) @common_fields:nn:nn
-        foreign llvm and(#right##0:wybe.int, 3:wybe.int, ?tmp#67##0:wybe.int)
-        foreign llvm icmp_eq(~tmp#67##0:wybe.int, 0:wybe.int, ?tmp#68##0:wybe.bool)
-        case ~tmp#68##0:wybe.bool of
+        foreign llvm and(#right##0:wybe.int, 3:wybe.int, ?tmp#46##0:wybe.int)
+        foreign llvm icmp_eq(~tmp#46##0:wybe.int, 0:wybe.int, ?tmp#47##0:wybe.bool)
+        case ~tmp#47##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
         1:
             foreign lpvm access(#right##0:common_fields, 0:wybe.int, 32:wybe.int, 0:wybe.int, ?#right#title##0:wybe.string) @common_fields:nn:nn
             foreign lpvm access(#right##0:common_fields, 8:wybe.int, 32:wybe.int, 0:wybe.int, ?#right#author##0:wybe.string) @common_fields:nn:nn
             foreign lpvm access(#right##0:common_fields, 16:wybe.int, 32:wybe.int, 0:wybe.int, ?#right#genre##0:wybe.string) @common_fields:nn:nn
             foreign lpvm access(~#right##0:common_fields, 24:wybe.int, 32:wybe.int, 0:wybe.int, ?#right#id##0:wybe.int) @common_fields:nn:nn
-            wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#title##0:wybe.string, ~#right#title##0:wybe.string, ~#left#title##0:wybe.string, ~#right#title##0:wybe.string, ?tmp#71##0:wybe.comparison) #26 @string:nn:nn
-            foreign llvm icmp_eq(~tmp#71##0:wybe.comparison, 1:wybe.comparison, ?tmp#2##0:wybe.bool) @comparison:nn:nn
-            case ~tmp#2##0:wybe.bool of
+            wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#title##0:wybe.string, ~#right#title##0:wybe.string, ~#left#title##0:wybe.string, ~#right#title##0:wybe.string, ?tmp#50##0:wybe.comparison) #26 @string:nn:nn
+            foreign llvm icmp_eq(~tmp#50##0:wybe.comparison, 1:wybe.comparison, ?#success##2:wybe.bool) @comparison:nn:nn
+            case ~#success##2:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
             1:
-                wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#author##0:wybe.string, ~#right#author##0:wybe.string, ~#left#author##0:wybe.string, ~#right#author##0:wybe.string, ?tmp#74##0:wybe.comparison) #27 @string:nn:nn
-                foreign llvm icmp_eq(~tmp#74##0:wybe.comparison, 1:wybe.comparison, ?tmp#3##0:wybe.bool) @comparison:nn:nn
-                case ~tmp#3##0:wybe.bool of
+                wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#author##0:wybe.string, ~#right#author##0:wybe.string, ~#left#author##0:wybe.string, ~#right#author##0:wybe.string, ?tmp#53##0:wybe.comparison) #27 @string:nn:nn
+                foreign llvm icmp_eq(~tmp#53##0:wybe.comparison, 1:wybe.comparison, ?#success##3:wybe.bool) @comparison:nn:nn
+                case ~#success##3:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
                 1:
-                    wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#genre##0:wybe.string, ~#right#genre##0:wybe.string, ~#left#genre##0:wybe.string, ~#right#genre##0:wybe.string, ?tmp#77##0:wybe.comparison) #28 @string:nn:nn
-                    foreign llvm icmp_eq(~tmp#77##0:wybe.comparison, 1:wybe.comparison, ?tmp#4##0:wybe.bool) @comparison:nn:nn
-                    case ~tmp#4##0:wybe.bool of
+                    wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#genre##0:wybe.string, ~#right#genre##0:wybe.string, ~#left#genre##0:wybe.string, ~#right#genre##0:wybe.string, ?tmp#56##0:wybe.comparison) #28 @string:nn:nn
+                    foreign llvm icmp_eq(~tmp#56##0:wybe.comparison, 1:wybe.comparison, ?#success##4:wybe.bool) @comparison:nn:nn
+                    case ~#success##4:wybe.bool of
                     0:
-                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                        foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
                     1:
-                        foreign llvm icmp_eq(~#left#id##0:wybe.int, ~#right#id##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                        foreign llvm icmp_eq(~#left#id##0:wybe.int, ~#right#id##0:wybe.int, ?#success##8:wybe.bool) @int:nn:nn
 
 
 
@@ -141,30 +141,30 @@ module top-level code > public {semipure} (0 calls)
         foreign lpvm access(#left##0:common_fields, -1:wybe.int, 24:wybe.int, 1:wybe.int, ?#left#title##1:wybe.string) @common_fields:nn:nn
         foreign lpvm access(#left##0:common_fields, 7:wybe.int, 24:wybe.int, 1:wybe.int, ?#left#frequency##0:wybe.int) @common_fields:nn:nn
         foreign lpvm access(~#left##0:common_fields, 15:wybe.int, 24:wybe.int, 1:wybe.int, ?#left#id##1:wybe.int) @common_fields:nn:nn
-        foreign llvm and(#right##0:wybe.int, 3:wybe.int, ?tmp#57##0:wybe.int)
-        foreign llvm icmp_eq(~tmp#57##0:wybe.int, 1:wybe.int, ?tmp#58##0:wybe.bool)
-        case ~tmp#58##0:wybe.bool of
+        foreign llvm and(#right##0:wybe.int, 3:wybe.int, ?tmp#36##0:wybe.int)
+        foreign llvm icmp_eq(~tmp#36##0:wybe.int, 1:wybe.int, ?tmp#37##0:wybe.bool)
+        case ~tmp#37##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
         1:
             foreign lpvm access(#right##0:common_fields, -1:wybe.int, 24:wybe.int, 1:wybe.int, ?#right#title##0:wybe.string) @common_fields:nn:nn
             foreign lpvm access(#right##0:common_fields, 7:wybe.int, 24:wybe.int, 1:wybe.int, ?#right#frequency##0:wybe.int) @common_fields:nn:nn
             foreign lpvm access(~#right##0:common_fields, 15:wybe.int, 24:wybe.int, 1:wybe.int, ?#right#id##0:wybe.int) @common_fields:nn:nn
-            wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#title##1:wybe.string, ~#right#title##0:wybe.string, ~#left#title##1:wybe.string, ~#right#title##0:wybe.string, ?tmp#61##0:wybe.comparison) #25 @string:nn:nn
-            foreign llvm icmp_eq(~tmp#61##0:wybe.comparison, 1:wybe.comparison, ?tmp#7##0:wybe.bool) @comparison:nn:nn
-            case ~tmp#7##0:wybe.bool of
+            wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#title##1:wybe.string, ~#right#title##0:wybe.string, ~#left#title##1:wybe.string, ~#right#title##0:wybe.string, ?tmp#40##0:wybe.comparison) #25 @string:nn:nn
+            foreign llvm icmp_eq(~tmp#40##0:wybe.comparison, 1:wybe.comparison, ?#success##3:wybe.bool) @comparison:nn:nn
+            case ~#success##3:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
             1:
-                foreign llvm icmp_eq(~#left#frequency##0:wybe.int, ~#right#frequency##0:wybe.int, ?tmp#8##0:wybe.bool) @int:nn:nn
-                case ~tmp#8##0:wybe.bool of
+                foreign llvm icmp_eq(~#left#frequency##0:wybe.int, ~#right#frequency##0:wybe.int, ?#success##4:wybe.bool) @int:nn:nn
+                case ~#success##4:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
                 1:
-                    foreign llvm icmp_eq(~#left#id##1:wybe.int, ~#right#id##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                    foreign llvm icmp_eq(~#left#id##1:wybe.int, ~#right#id##0:wybe.int, ?#success##8:wybe.bool) @int:nn:nn
 
 
 
@@ -174,39 +174,39 @@ module top-level code > public {semipure} (0 calls)
         foreign lpvm access(#left##0:common_fields, 6:wybe.int, 32:wybe.int, 2:wybe.int, ?#left#director##0:wybe.string) @common_fields:nn:nn
         foreign lpvm access(#left##0:common_fields, 14:wybe.int, 32:wybe.int, 2:wybe.int, ?#left#genre##1:wybe.string) @common_fields:nn:nn
         foreign lpvm access(~#left##0:common_fields, 22:wybe.int, 32:wybe.int, 2:wybe.int, ?#left#id##2:wybe.int) @common_fields:nn:nn
-        foreign llvm and(#right##0:wybe.int, 3:wybe.int, ?tmp#43##0:wybe.int)
-        foreign llvm icmp_eq(~tmp#43##0:wybe.int, 2:wybe.int, ?tmp#44##0:wybe.bool)
-        case ~tmp#44##0:wybe.bool of
+        foreign llvm and(#right##0:wybe.int, 3:wybe.int, ?tmp#22##0:wybe.int)
+        foreign llvm icmp_eq(~tmp#22##0:wybe.int, 2:wybe.int, ?tmp#23##0:wybe.bool)
+        case ~tmp#23##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
         1:
             foreign lpvm access(#right##0:common_fields, -2:wybe.int, 32:wybe.int, 2:wybe.int, ?#right#title##0:wybe.string) @common_fields:nn:nn
             foreign lpvm access(#right##0:common_fields, 6:wybe.int, 32:wybe.int, 2:wybe.int, ?#right#director##0:wybe.string) @common_fields:nn:nn
             foreign lpvm access(#right##0:common_fields, 14:wybe.int, 32:wybe.int, 2:wybe.int, ?#right#genre##0:wybe.string) @common_fields:nn:nn
             foreign lpvm access(~#right##0:common_fields, 22:wybe.int, 32:wybe.int, 2:wybe.int, ?#right#id##0:wybe.int) @common_fields:nn:nn
-            wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#title##2:wybe.string, ~#right#title##0:wybe.string, ~#left#title##2:wybe.string, ~#right#title##0:wybe.string, ?tmp#47##0:wybe.comparison) #22 @string:nn:nn
-            foreign llvm icmp_eq(~tmp#47##0:wybe.comparison, 1:wybe.comparison, ?tmp#11##0:wybe.bool) @comparison:nn:nn
-            case ~tmp#11##0:wybe.bool of
+            wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#title##2:wybe.string, ~#right#title##0:wybe.string, ~#left#title##2:wybe.string, ~#right#title##0:wybe.string, ?tmp#26##0:wybe.comparison) #22 @string:nn:nn
+            foreign llvm icmp_eq(~tmp#26##0:wybe.comparison, 1:wybe.comparison, ?#success##4:wybe.bool) @comparison:nn:nn
+            case ~#success##4:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
             1:
-                wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#director##0:wybe.string, ~#right#director##0:wybe.string, ~#left#director##0:wybe.string, ~#right#director##0:wybe.string, ?tmp#50##0:wybe.comparison) #23 @string:nn:nn
-                foreign llvm icmp_eq(~tmp#50##0:wybe.comparison, 1:wybe.comparison, ?tmp#12##0:wybe.bool) @comparison:nn:nn
-                case ~tmp#12##0:wybe.bool of
+                wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#director##0:wybe.string, ~#right#director##0:wybe.string, ~#left#director##0:wybe.string, ~#right#director##0:wybe.string, ?tmp#29##0:wybe.comparison) #23 @string:nn:nn
+                foreign llvm icmp_eq(~tmp#29##0:wybe.comparison, 1:wybe.comparison, ?#success##5:wybe.bool) @comparison:nn:nn
+                case ~#success##5:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
                 1:
-                    wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#genre##1:wybe.string, ~#right#genre##0:wybe.string, ~#left#genre##1:wybe.string, ~#right#genre##0:wybe.string, ?tmp#53##0:wybe.comparison) #24 @string:nn:nn
-                    foreign llvm icmp_eq(~tmp#53##0:wybe.comparison, 1:wybe.comparison, ?tmp#13##0:wybe.bool) @comparison:nn:nn
-                    case ~tmp#13##0:wybe.bool of
+                    wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#genre##1:wybe.string, ~#right#genre##0:wybe.string, ~#left#genre##1:wybe.string, ~#right#genre##0:wybe.string, ?tmp#32##0:wybe.comparison) #24 @string:nn:nn
+                    foreign llvm icmp_eq(~tmp#32##0:wybe.comparison, 1:wybe.comparison, ?#success##6:wybe.bool) @comparison:nn:nn
+                    case ~#success##6:wybe.bool of
                     0:
-                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                        foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
                     1:
-                        foreign llvm icmp_eq(~#left#id##2:wybe.int, ~#right#id##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                        foreign llvm icmp_eq(~#left#id##2:wybe.int, ~#right#id##0:wybe.int, ?#success##8:wybe.bool) @int:nn:nn
 
 
 
@@ -215,23 +215,23 @@ module top-level code > public {semipure} (0 calls)
     3:
         foreign lpvm access(#left##0:common_fields, -3:wybe.int, 16:wybe.int, 3:wybe.int, ?#left#title##3:wybe.string) @common_fields:nn:nn
         foreign lpvm access(~#left##0:common_fields, 5:wybe.int, 16:wybe.int, 3:wybe.int, ?#left#id##3:wybe.int) @common_fields:nn:nn
-        foreign llvm and(#right##0:wybe.int, 3:wybe.int, ?tmp#35##0:wybe.int)
-        foreign llvm icmp_eq(~tmp#35##0:wybe.int, 3:wybe.int, ?tmp#36##0:wybe.bool)
-        case ~tmp#36##0:wybe.bool of
+        foreign llvm and(#right##0:wybe.int, 3:wybe.int, ?tmp#14##0:wybe.int)
+        foreign llvm icmp_eq(~tmp#14##0:wybe.int, 3:wybe.int, ?tmp#15##0:wybe.bool)
+        case ~tmp#15##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
         1:
             foreign lpvm access(#right##0:common_fields, -3:wybe.int, 16:wybe.int, 3:wybe.int, ?#right#title##0:wybe.string) @common_fields:nn:nn
             foreign lpvm access(~#right##0:common_fields, 5:wybe.int, 16:wybe.int, 3:wybe.int, ?#right#id##0:wybe.int) @common_fields:nn:nn
-            wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#title##3:wybe.string, ~#right#title##0:wybe.string, ~#left#title##3:wybe.string, ~#right#title##0:wybe.string, ?tmp#39##0:wybe.comparison) #21 @string:nn:nn
-            foreign llvm icmp_eq(~tmp#39##0:wybe.comparison, 1:wybe.comparison, ?tmp#16##0:wybe.bool) @comparison:nn:nn
-            case ~tmp#16##0:wybe.bool of
+            wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#title##3:wybe.string, ~#right#title##0:wybe.string, ~#left#title##3:wybe.string, ~#right#title##0:wybe.string, ?tmp#18##0:wybe.comparison) #21 @string:nn:nn
+            foreign llvm icmp_eq(~tmp#18##0:wybe.comparison, 1:wybe.comparison, ?#success##5:wybe.bool) @comparison:nn:nn
+            case ~#success##5:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##8:wybe.bool)
 
             1:
-                foreign llvm icmp_eq(~#left#id##3:wybe.int, ~#right#id##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                foreign llvm icmp_eq(~#left#id##3:wybe.int, ~#right#id##0:wybe.int, ?#success##8:wybe.bool) @int:nn:nn
 
 
 
@@ -601,11 +601,11 @@ title(#rec##0:common_fields, ?#rec##1:common_fields, #field##0:wybe.string)<{}; 
 
 ~= > public {inline} (0 calls)
 0: common_fields.~=<0>
-~=(#left##0:common_fields, #right##0:common_fields, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:common_fields, #right##0:common_fields, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    common_fields.=<0>(~#left##0:common_fields, ~#right##0:common_fields, ?tmp#0##0:wybe.bool) #0
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    common_fields.=<0>(~#left##0:common_fields, ~#right##0:common_fields, ?#success##0:wybe.bool) #0
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 

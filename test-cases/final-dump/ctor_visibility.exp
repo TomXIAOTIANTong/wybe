@@ -69,11 +69,11 @@ foo(?#result##0:ctor_visibility.all_priv)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: ctor_visibility.all_priv.~=<0>
-~=(#left##0:ctor_visibility.all_priv, #right##0:ctor_visibility.all_priv, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:ctor_visibility.all_priv, #right##0:ctor_visibility.all_priv, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm icmp_eq(~#left##0:ctor_visibility.all_priv, ~#right##0:ctor_visibility.all_priv, ?tmp#0##0:wybe.bool)
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm icmp_eq(~#left##0:ctor_visibility.all_priv, ~#right##0:ctor_visibility.all_priv, ?#success##0:wybe.bool)
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -154,11 +154,11 @@ foo(?#result##0:ctor_visibility.all_public_long)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: ctor_visibility.all_public_long.~=<0>
-~=(#left##0:ctor_visibility.all_public_long, #right##0:ctor_visibility.all_public_long, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:ctor_visibility.all_public_long, #right##0:ctor_visibility.all_public_long, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm icmp_eq(~#left##0:ctor_visibility.all_public_long, ~#right##0:ctor_visibility.all_public_long, ?tmp#0##0:wybe.bool)
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm icmp_eq(~#left##0:ctor_visibility.all_public_long, ~#right##0:ctor_visibility.all_public_long, ?#success##0:wybe.bool)
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -239,11 +239,11 @@ foo(?#result##0:ctor_visibility.all_public_short)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: ctor_visibility.all_public_short.~=<0>
-~=(#left##0:ctor_visibility.all_public_short, #right##0:ctor_visibility.all_public_short, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:ctor_visibility.all_public_short, #right##0:ctor_visibility.all_public_short, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm icmp_eq(~#left##0:ctor_visibility.all_public_short, ~#right##0:ctor_visibility.all_public_short, ?tmp#0##0:wybe.bool)
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm icmp_eq(~#left##0:ctor_visibility.all_public_short, ~#right##0:ctor_visibility.all_public_short, ?#success##0:wybe.bool)
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -322,11 +322,11 @@ foo(?#result##0:ctor_visibility.ctor_keyword)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: ctor_visibility.ctor_keyword.~=<0>
-~=(#left##0:ctor_visibility.ctor_keyword, #right##0:ctor_visibility.ctor_keyword, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:ctor_visibility.ctor_keyword, #right##0:ctor_visibility.ctor_keyword, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm icmp_eq(~#left##0:ctor_visibility.ctor_keyword, ~#right##0:ctor_visibility.ctor_keyword, ?tmp#0##0:wybe.bool)
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm icmp_eq(~#left##0:ctor_visibility.ctor_keyword, ~#right##0:ctor_visibility.ctor_keyword, ?#success##0:wybe.bool)
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -406,11 +406,11 @@ foo(?#result##0:ctor_visibility.one_pub)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: ctor_visibility.one_pub.~=<0>
-~=(#left##0:ctor_visibility.one_pub, #right##0:ctor_visibility.one_pub, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:ctor_visibility.one_pub, #right##0:ctor_visibility.one_pub, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm icmp_eq(~#left##0:ctor_visibility.one_pub, ~#right##0:ctor_visibility.one_pub, ?tmp#0##0:wybe.bool)
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm icmp_eq(~#left##0:ctor_visibility.one_pub, ~#right##0:ctor_visibility.one_pub, ?#success##0:wybe.bool)
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -490,11 +490,11 @@ foo(?#result##0:ctor_visibility.one_pub2)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: ctor_visibility.one_pub2.~=<0>
-~=(#left##0:ctor_visibility.one_pub2, #right##0:ctor_visibility.one_pub2, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:ctor_visibility.one_pub2, #right##0:ctor_visibility.one_pub2, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm icmp_eq(~#left##0:ctor_visibility.one_pub2, ~#right##0:ctor_visibility.one_pub2, ?tmp#0##0:wybe.bool)
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm icmp_eq(~#left##0:ctor_visibility.one_pub2, ~#right##0:ctor_visibility.one_pub2, ?#success##0:wybe.bool)
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -557,52 +557,52 @@ entry:
 
 = > public (1 calls)
 0: ctor_visibility.with_fields.=<0>
-=(#left##0:ctor_visibility.with_fields, #right##0:ctor_visibility.with_fields, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:ctor_visibility.with_fields, #right##0:ctor_visibility.with_fields, ?#success##5:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm and(#left##0:wybe.int, 1:wybe.int, ?tmp#9##0:wybe.int)
-    foreign llvm icmp_eq(tmp#9##0:wybe.int, 0:wybe.int, ?tmp#10##0:wybe.bool)
-    case ~tmp#10##0:wybe.bool of
+    foreign llvm and(#left##0:wybe.int, 1:wybe.int, ?tmp#2##0:wybe.int)
+    foreign llvm icmp_eq(tmp#2##0:wybe.int, 0:wybe.int, ?tmp#3##0:wybe.bool)
+    case ~tmp#3##0:wybe.bool of
     0:
-        foreign llvm icmp_eq(~tmp#9##0:wybe.int, 1:wybe.int, ?tmp#13##0:wybe.bool)
-        case ~tmp#13##0:wybe.bool of
+        foreign llvm icmp_eq(~tmp#2##0:wybe.int, 1:wybe.int, ?tmp#6##0:wybe.bool)
+        case ~tmp#6##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##5:wybe.bool)
 
         1:
             foreign lpvm access(#left##0:ctor_visibility.with_fields, -1:wybe.int, 16:wybe.int, 1:wybe.int, ?#left#a##1:wybe.int) @ctor_visibility:nn:nn
             foreign lpvm access(~#left##0:ctor_visibility.with_fields, 7:wybe.int, 16:wybe.int, 1:wybe.int, ?#left#b##0:wybe.int) @ctor_visibility:nn:nn
-            foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#15##0:wybe.int)
-            foreign llvm icmp_eq(~tmp#15##0:wybe.int, 1:wybe.int, ?tmp#16##0:wybe.bool)
-            case ~tmp#16##0:wybe.bool of
+            foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#8##0:wybe.int)
+            foreign llvm icmp_eq(~tmp#8##0:wybe.int, 1:wybe.int, ?tmp#9##0:wybe.bool)
+            case ~tmp#9##0:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##5:wybe.bool)
 
             1:
                 foreign lpvm access(#right##0:ctor_visibility.with_fields, -1:wybe.int, 16:wybe.int, 1:wybe.int, ?#right#a##0:wybe.int) @ctor_visibility:nn:nn
                 foreign lpvm access(~#right##0:ctor_visibility.with_fields, 7:wybe.int, 16:wybe.int, 1:wybe.int, ?#right#b##0:wybe.int) @ctor_visibility:nn:nn
-                foreign llvm icmp_eq(~#left#a##1:wybe.int, ~#right#a##0:wybe.int, ?tmp#4##0:wybe.bool) @int:nn:nn
-                case ~tmp#4##0:wybe.bool of
+                foreign llvm icmp_eq(~#left#a##1:wybe.int, ~#right#a##0:wybe.int, ?#success##3:wybe.bool) @int:nn:nn
+                case ~#success##3:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##5:wybe.bool)
 
                 1:
-                    foreign llvm icmp_eq(~#left#b##0:wybe.int, ~#right#b##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                    foreign llvm icmp_eq(~#left#b##0:wybe.int, ~#right#b##0:wybe.int, ?#success##5:wybe.bool) @int:nn:nn
 
 
 
 
     1:
         foreign lpvm access(~#left##0:ctor_visibility.with_fields, 0:wybe.int, 8:wybe.int, 0:wybe.int, ?#left#a##0:wybe.int) @ctor_visibility:nn:nn
-        foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#22##0:wybe.int)
-        foreign llvm icmp_eq(~tmp#22##0:wybe.int, 0:wybe.int, ?tmp#23##0:wybe.bool)
-        case ~tmp#23##0:wybe.bool of
+        foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#15##0:wybe.int)
+        foreign llvm icmp_eq(~tmp#15##0:wybe.int, 0:wybe.int, ?tmp#16##0:wybe.bool)
+        case ~tmp#16##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##5:wybe.bool)
 
         1:
             foreign lpvm access(~#right##0:ctor_visibility.with_fields, 0:wybe.int, 8:wybe.int, 0:wybe.int, ?#right#a##0:wybe.int) @ctor_visibility:nn:nn
-            foreign llvm icmp_eq(~#left#a##0:wybe.int, ~#right#a##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+            foreign llvm icmp_eq(~#left#a##0:wybe.int, ~#right#a##0:wybe.int, ?#success##5:wybe.bool) @int:nn:nn
 
 
 
@@ -727,11 +727,11 @@ foo(?a##0:wybe.int, #result##0:ctor_visibility.with_fields, ?#success##0:wybe.bo
 
 ~= > public {inline} (0 calls)
 0: ctor_visibility.with_fields.~=<0>
-~=(#left##0:ctor_visibility.with_fields, #right##0:ctor_visibility.with_fields, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:ctor_visibility.with_fields, #right##0:ctor_visibility.with_fields, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    ctor_visibility.with_fields.=<0>(~#left##0:ctor_visibility.with_fields, ~#right##0:ctor_visibility.with_fields, ?tmp#0##0:wybe.bool) #0
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    ctor_visibility.with_fields.=<0>(~#left##0:ctor_visibility.with_fields, ~#right##0:ctor_visibility.with_fields, ?#success##0:wybe.bool) #0
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -988,43 +988,43 @@ entry:
 
 = > public (1 calls)
 0: ctor_visibility.with_fields2.=<0>
-=(#left##0:ctor_visibility.with_fields2, #right##0:ctor_visibility.with_fields2, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:ctor_visibility.with_fields2, #right##0:ctor_visibility.with_fields2, ?#success##4:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm and(#left##0:wybe.int, 1:wybe.int, ?tmp#8##0:wybe.int)
-    foreign llvm icmp_eq(tmp#8##0:wybe.int, 0:wybe.int, ?tmp#9##0:wybe.bool)
-    case ~tmp#9##0:wybe.bool of
+    foreign llvm and(#left##0:wybe.int, 1:wybe.int, ?tmp#2##0:wybe.int)
+    foreign llvm icmp_eq(tmp#2##0:wybe.int, 0:wybe.int, ?tmp#3##0:wybe.bool)
+    case ~tmp#3##0:wybe.bool of
     0:
-        foreign llvm icmp_eq(~tmp#8##0:wybe.int, 1:wybe.int, ?tmp#12##0:wybe.bool)
-        case ~tmp#12##0:wybe.bool of
+        foreign llvm icmp_eq(~tmp#2##0:wybe.int, 1:wybe.int, ?tmp#6##0:wybe.bool)
+        case ~tmp#6##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##4:wybe.bool)
 
         1:
             foreign lpvm access(~#left##0:ctor_visibility.with_fields2, -1:wybe.int, 8:wybe.int, 1:wybe.int, ?#left#b##0:wybe.int) @ctor_visibility:nn:nn
-            foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#14##0:wybe.int)
-            foreign llvm icmp_eq(~tmp#14##0:wybe.int, 1:wybe.int, ?tmp#15##0:wybe.bool)
-            case ~tmp#15##0:wybe.bool of
+            foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#8##0:wybe.int)
+            foreign llvm icmp_eq(~tmp#8##0:wybe.int, 1:wybe.int, ?tmp#9##0:wybe.bool)
+            case ~tmp#9##0:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##4:wybe.bool)
 
             1:
                 foreign lpvm access(~#right##0:ctor_visibility.with_fields2, -1:wybe.int, 8:wybe.int, 1:wybe.int, ?#right#b##0:wybe.int) @ctor_visibility:nn:nn
-                foreign llvm icmp_eq(~#left#b##0:wybe.int, ~#right#b##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                foreign llvm icmp_eq(~#left#b##0:wybe.int, ~#right#b##0:wybe.int, ?#success##4:wybe.bool) @int:nn:nn
 
 
 
     1:
         foreign lpvm access(~#left##0:ctor_visibility.with_fields2, 0:wybe.int, 8:wybe.int, 0:wybe.int, ?#left#a##0:wybe.int) @ctor_visibility:nn:nn
-        foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#19##0:wybe.int)
-        foreign llvm icmp_eq(~tmp#19##0:wybe.int, 0:wybe.int, ?tmp#20##0:wybe.bool)
-        case ~tmp#20##0:wybe.bool of
+        foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#13##0:wybe.int)
+        foreign llvm icmp_eq(~tmp#13##0:wybe.int, 0:wybe.int, ?tmp#14##0:wybe.bool)
+        case ~tmp#14##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##4:wybe.bool)
 
         1:
             foreign lpvm access(~#right##0:ctor_visibility.with_fields2, 0:wybe.int, 8:wybe.int, 0:wybe.int, ?#right#a##0:wybe.int) @ctor_visibility:nn:nn
-            foreign llvm icmp_eq(~#left#a##0:wybe.int, ~#right#a##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+            foreign llvm icmp_eq(~#left#a##0:wybe.int, ~#right#a##0:wybe.int, ?#success##4:wybe.bool) @int:nn:nn
 
 
 
@@ -1150,11 +1150,11 @@ foo(?a##0:wybe.int, #result##0:ctor_visibility.with_fields2, ?#success##0:wybe.b
 
 ~= > public {inline} (0 calls)
 0: ctor_visibility.with_fields2.~=<0>
-~=(#left##0:ctor_visibility.with_fields2, #right##0:ctor_visibility.with_fields2, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:ctor_visibility.with_fields2, #right##0:ctor_visibility.with_fields2, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    ctor_visibility.with_fields2.=<0>(~#left##0:ctor_visibility.with_fields2, ~#right##0:ctor_visibility.with_fields2, ?tmp#0##0:wybe.bool) #0
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    ctor_visibility.with_fields2.=<0>(~#left##0:ctor_visibility.with_fields2, ~#right##0:ctor_visibility.with_fields2, ?#success##0:wybe.bool) #0
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 

@@ -367,21 +367,21 @@ entry:
 
 = > public {inline} (1 calls)
 0: student.course.=<0>
-=(#left##0:student.course, #right##0:student.course, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:student.course, #right##0:student.course, ?#success##2:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
     foreign lpvm access(#left##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?#left#code##0:wybe.int) @student:nn:nn
     foreign lpvm access(~#left##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?#left#name##0:wybe.string) @student:nn:nn
     foreign lpvm access(#right##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?#right#code##0:wybe.int) @student:nn:nn
     foreign lpvm access(~#right##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?#right#name##0:wybe.string) @student:nn:nn
-    foreign llvm icmp_eq(~#left#code##0:wybe.int, ~#right#code##0:wybe.int, ?tmp#1##0:wybe.bool) @int:nn:nn
-    case ~tmp#1##0:wybe.bool of
+    foreign llvm icmp_eq(~#left#code##0:wybe.int, ~#right#code##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+    case ~#success##0:wybe.bool of
     0:
-        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm move(0:wybe.bool, ?#success##2:wybe.bool)
 
     1:
-        wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#name##0:wybe.string, ~#right#name##0:wybe.string, ~#left#name##0:wybe.string, ~#right#name##0:wybe.string, ?tmp#9##0:wybe.comparison) #4 @string:nn:nn
-        foreign llvm icmp_eq(~tmp#9##0:wybe.comparison, 1:wybe.comparison, ?#success##0:wybe.bool) @comparison:nn:nn
+        wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~#left#name##0:wybe.string, ~#right#name##0:wybe.string, ~#left#name##0:wybe.string, ~#right#name##0:wybe.string, ?tmp#7##0:wybe.comparison) #4 @string:nn:nn
+        foreign llvm icmp_eq(~tmp#7##0:wybe.comparison, 1:wybe.comparison, ?#success##2:wybe.bool) @comparison:nn:nn
 
 
 
@@ -432,23 +432,23 @@ name(#rec##0:student.course, ?#rec##1:student.course, #field##0:wybe.string)<{};
 
 ~= > public {inline} (0 calls)
 0: student.course.~=<0>
-~=(#left##0:student.course, #right##0:student.course, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:student.course, #right##0:student.course, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign lpvm access(#left##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#3##0:wybe.int) @student:nn:nn
-    foreign lpvm access(~#left##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#4##0:wybe.string) @student:nn:nn
-    foreign lpvm access(#right##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#5##0:wybe.int) @student:nn:nn
-    foreign lpvm access(~#right##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#6##0:wybe.string) @student:nn:nn
-    foreign llvm icmp_eq(~tmp#3##0:wybe.int, ~tmp#5##0:wybe.int, ?tmp#7##0:wybe.bool) @int:nn:nn
-    case ~tmp#7##0:wybe.bool of
+    foreign lpvm access(#left##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#2##0:wybe.int) @student:nn:nn
+    foreign lpvm access(~#left##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#3##0:wybe.string) @student:nn:nn
+    foreign lpvm access(#right##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#4##0:wybe.int) @student:nn:nn
+    foreign lpvm access(~#right##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#5##0:wybe.string) @student:nn:nn
+    foreign llvm icmp_eq(~tmp#2##0:wybe.int, ~tmp#4##0:wybe.int, ?tmp#6##0:wybe.bool) @int:nn:nn
+    case ~tmp#6##0:wybe.bool of
     0:
-        foreign llvm move(0:wybe.bool, ?tmp#0##0:wybe.bool)
-        foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
     1:
-        wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~tmp#4##0:wybe.string, ~tmp#6##0:wybe.string, ~tmp#4##0:wybe.string, ~tmp#6##0:wybe.string, ?tmp#8##0:wybe.comparison) #1 @string:nn:nn
-        foreign llvm icmp_eq(~tmp#8##0:wybe.comparison, 1:wybe.comparison, ?tmp#0##0:wybe.bool) @comparison:nn:nn
-        foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+        wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~tmp#3##0:wybe.string, ~tmp#5##0:wybe.string, ~tmp#3##0:wybe.string, ~tmp#5##0:wybe.string, ?tmp#7##0:wybe.comparison) #1 @string:nn:nn
+        foreign llvm icmp_eq(~tmp#7##0:wybe.comparison, 1:wybe.comparison, ?#success##0:wybe.bool) @comparison:nn:nn
+        foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
 
   LLVM code       :
@@ -609,31 +609,31 @@ if.else:
 
 = > public {inline} (1 calls)
 0: student.student.=<0>
-=(#left##0:student.student, #right##0:student.student, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:student.student, #right##0:student.student, ?#success##2:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
     foreign lpvm access(#left##0:student.student, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?#left#id##0:wybe.int) @student:nn:nn
     foreign lpvm access(~#left##0:student.student, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?#left#major##0:student.course) @student:nn:nn
     foreign lpvm access(#right##0:student.student, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?#right#id##0:wybe.int) @student:nn:nn
     foreign lpvm access(~#right##0:student.student, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?#right#major##0:student.course) @student:nn:nn
-    foreign llvm icmp_eq(~#left#id##0:wybe.int, ~#right#id##0:wybe.int, ?tmp#1##0:wybe.bool) @int:nn:nn
-    case ~tmp#1##0:wybe.bool of
+    foreign llvm icmp_eq(~#left#id##0:wybe.int, ~#right#id##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+    case ~#success##0:wybe.bool of
     0:
-        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm move(0:wybe.bool, ?#success##2:wybe.bool)
 
     1:
-        foreign lpvm access(#left#major##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#9##0:wybe.int) @student:nn:nn
-        foreign lpvm access(~#left#major##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#10##0:wybe.string) @student:nn:nn
-        foreign lpvm access(#right#major##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#11##0:wybe.int) @student:nn:nn
-        foreign lpvm access(~#right#major##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#12##0:wybe.string) @student:nn:nn
-        foreign llvm icmp_eq(~tmp#11##0:wybe.int, ~tmp#9##0:wybe.int, ?tmp#13##0:wybe.bool) @int:nn:nn
-        case ~tmp#13##0:wybe.bool of
+        foreign lpvm access(#left#major##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#7##0:wybe.int) @student:nn:nn
+        foreign lpvm access(~#left#major##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#8##0:wybe.string) @student:nn:nn
+        foreign lpvm access(#right#major##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#9##0:wybe.int) @student:nn:nn
+        foreign lpvm access(~#right#major##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#10##0:wybe.string) @student:nn:nn
+        foreign llvm icmp_eq(~tmp#7##0:wybe.int, ~tmp#9##0:wybe.int, ?tmp#11##0:wybe.bool) @int:nn:nn
+        case ~tmp#11##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##2:wybe.bool)
 
         1:
-            wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~tmp#10##0:wybe.string, ~tmp#12##0:wybe.string, ~tmp#10##0:wybe.string, ~tmp#12##0:wybe.string, ?tmp#14##0:wybe.comparison) #4 @string:nn:nn
-            foreign llvm icmp_eq(~tmp#14##0:wybe.comparison, 1:wybe.comparison, ?#success##0:wybe.bool) @comparison:nn:nn
+            wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~tmp#8##0:wybe.string, ~tmp#10##0:wybe.string, ~tmp#8##0:wybe.string, ~tmp#10##0:wybe.string, ?tmp#12##0:wybe.comparison) #4 @string:nn:nn
+            foreign llvm icmp_eq(~tmp#12##0:wybe.comparison, 1:wybe.comparison, ?#success##2:wybe.bool) @comparison:nn:nn
 
 
 
@@ -685,34 +685,34 @@ student(?id##0:wybe.int, ?major##0:student.course, #result##0:student.student)<{
 
 ~= > public {inline} (0 calls)
 0: student.student.~=<0>
-~=(#left##0:student.student, #right##0:student.student, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:student.student, #right##0:student.student, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign lpvm access(#left##0:student.student, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#3##0:wybe.int) @student:nn:nn
-    foreign lpvm access(~#left##0:student.student, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#4##0:student.course) @student:nn:nn
-    foreign lpvm access(#right##0:student.student, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#5##0:wybe.int) @student:nn:nn
-    foreign lpvm access(~#right##0:student.student, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#6##0:student.course) @student:nn:nn
-    foreign llvm icmp_eq(~tmp#3##0:wybe.int, ~tmp#5##0:wybe.int, ?tmp#7##0:wybe.bool) @int:nn:nn
-    case ~tmp#7##0:wybe.bool of
+    foreign lpvm access(#left##0:student.student, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#2##0:wybe.int) @student:nn:nn
+    foreign lpvm access(~#left##0:student.student, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#3##0:student.course) @student:nn:nn
+    foreign lpvm access(#right##0:student.student, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#4##0:wybe.int) @student:nn:nn
+    foreign lpvm access(~#right##0:student.student, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#5##0:student.course) @student:nn:nn
+    foreign llvm icmp_eq(~tmp#2##0:wybe.int, ~tmp#4##0:wybe.int, ?tmp#6##0:wybe.bool) @int:nn:nn
+    case ~tmp#6##0:wybe.bool of
     0:
-        foreign llvm move(0:wybe.bool, ?tmp#0##0:wybe.bool)
-        foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
     1:
-        foreign lpvm access(tmp#4##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#8##0:wybe.int) @student:nn:nn
-        foreign lpvm access(~tmp#4##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#9##0:wybe.string) @student:nn:nn
-        foreign lpvm access(tmp#6##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#10##0:wybe.int) @student:nn:nn
-        foreign lpvm access(~tmp#6##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#11##0:wybe.string) @student:nn:nn
-        foreign llvm icmp_eq(~tmp#10##0:wybe.int, ~tmp#8##0:wybe.int, ?tmp#12##0:wybe.bool) @int:nn:nn
-        case ~tmp#12##0:wybe.bool of
+        foreign lpvm access(tmp#3##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#7##0:wybe.int) @student:nn:nn
+        foreign lpvm access(~tmp#3##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#8##0:wybe.string) @student:nn:nn
+        foreign lpvm access(tmp#5##0:student.course, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#9##0:wybe.int) @student:nn:nn
+        foreign lpvm access(~tmp#5##0:student.course, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#10##0:wybe.string) @student:nn:nn
+        foreign llvm icmp_eq(~tmp#7##0:wybe.int, ~tmp#9##0:wybe.int, ?tmp#11##0:wybe.bool) @int:nn:nn
+        case ~tmp#11##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?tmp#0##0:wybe.bool)
-            foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
         1:
-            wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~tmp#9##0:wybe.string, ~tmp#11##0:wybe.string, ~tmp#9##0:wybe.string, ~tmp#11##0:wybe.string, ?tmp#13##0:wybe.comparison) #1 @string:nn:nn
-            foreign llvm icmp_eq(~tmp#13##0:wybe.comparison, 1:wybe.comparison, ?tmp#0##0:wybe.bool) @comparison:nn:nn
-            foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+            wybe.string.<=>#cont#2<0>(1:wybe.comparison, ~tmp#8##0:wybe.string, ~tmp#10##0:wybe.string, ~tmp#8##0:wybe.string, ~tmp#10##0:wybe.string, ?tmp#12##0:wybe.comparison) #1 @string:nn:nn
+            foreign llvm icmp_eq(~tmp#12##0:wybe.comparison, 1:wybe.comparison, ?#success##0:wybe.bool) @comparison:nn:nn
+            foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
 
 
@@ -758,7 +758,7 @@ if.then:
   %18 = add   i64 %9, 8 
   %19 = inttoptr i64 %18 to i64* 
   %20 = load  i64, i64* %19 
-  %21 = icmp eq i64 %17, %12 
+  %21 = icmp eq i64 %12, %17 
   br i1 %21, label %if.then1, label %if.else1 
 if.else:
   ret i1 0 
@@ -871,7 +871,7 @@ if.then:
   %18 = add   i64 %9, 8 
   %19 = inttoptr i64 %18 to i64* 
   %20 = load  i64, i64* %19 
-  %21 = icmp eq i64 %17, %12 
+  %21 = icmp eq i64 %12, %17 
   br i1 %21, label %if.then1, label %if.else1 
 if.else:
   %26 = xor i1 0, 1 

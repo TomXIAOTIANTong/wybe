@@ -43,7 +43,7 @@ module top-level code > public {semipure} (0 calls)
 
 = > public (1 calls)
 0: mixed_fields.=<0>
-=(#left##0:mixed_fields, #right##0:mixed_fields, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:mixed_fields, #right##0:mixed_fields, ?#success##6:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
     foreign lpvm access(#left##0:mixed_fields, 0:wybe.int, 32:wybe.int, 0:wybe.int, ?#left#f2##0:wybe.char) @mixed_fields:nn:nn
@@ -58,37 +58,37 @@ module top-level code > public {semipure} (0 calls)
     foreign lpvm access(#right##0:mixed_fields, 8:wybe.int, 32:wybe.int, 0:wybe.int, ?#right#f1##0:wybe.int) @mixed_fields:nn:nn
     foreign lpvm access(#right##0:mixed_fields, 16:wybe.int, 32:wybe.int, 0:wybe.int, ?#right#f3##0:wybe.int) @mixed_fields:nn:nn
     foreign lpvm access(~#right##0:mixed_fields, 24:wybe.int, 32:wybe.int, 0:wybe.int, ?#right#f5##0:wybe.int) @mixed_fields:nn:nn
-    foreign llvm icmp_eq(~#left#f1##0:wybe.int, ~#right#f1##0:wybe.int, ?tmp#1##0:wybe.bool) @int:nn:nn
-    case ~tmp#1##0:wybe.bool of
+    foreign llvm icmp_eq(~#left#f1##0:wybe.int, ~#right#f1##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+    case ~#success##0:wybe.bool of
     0:
-        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm move(0:wybe.bool, ?#success##6:wybe.bool)
 
     1:
-        foreign llvm icmp_eq(~#left#f2##0:wybe.char, ~#right#f2##0:wybe.char, ?tmp#2##0:wybe.bool) @char:nn:nn
-        case ~tmp#2##0:wybe.bool of
+        foreign llvm icmp_eq(~#left#f2##0:wybe.char, ~#right#f2##0:wybe.char, ?#success##1:wybe.bool) @char:nn:nn
+        case ~#success##1:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##6:wybe.bool)
 
         1:
-            foreign llvm icmp_eq(~#left#f3##0:wybe.int, ~#right#f3##0:wybe.int, ?tmp#3##0:wybe.bool) @int:nn:nn
-            case ~tmp#3##0:wybe.bool of
+            foreign llvm icmp_eq(~#left#f3##0:wybe.int, ~#right#f3##0:wybe.int, ?#success##2:wybe.bool) @int:nn:nn
+            case ~#success##2:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##6:wybe.bool)
 
             1:
-                foreign llvm icmp_eq(~#left#f4##0:wybe.bool, ~#right#f4##0:wybe.bool, ?tmp#4##0:wybe.bool) @bool:nn:nn
-                case ~tmp#4##0:wybe.bool of
+                foreign llvm icmp_eq(~#left#f4##0:wybe.bool, ~#right#f4##0:wybe.bool, ?#success##3:wybe.bool) @bool:nn:nn
+                case ~#success##3:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##6:wybe.bool)
 
                 1:
-                    foreign llvm icmp_eq(~#left#f5##0:wybe.int, ~#right#f5##0:wybe.int, ?tmp#5##0:wybe.bool) @int:nn:nn
-                    case ~tmp#5##0:wybe.bool of
+                    foreign llvm icmp_eq(~#left#f5##0:wybe.int, ~#right#f5##0:wybe.int, ?#success##4:wybe.bool) @int:nn:nn
+                    case ~#success##4:wybe.bool of
                     0:
-                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                        foreign llvm move(0:wybe.bool, ?#success##6:wybe.bool)
 
                     1:
-                        foreign llvm icmp_eq(~#left#f6##0:wybe.char, ~#right#f6##0:wybe.char, ?#success##0:wybe.bool) @char:nn:nn
+                        foreign llvm icmp_eq(~#left#f6##0:wybe.char, ~#right#f6##0:wybe.char, ?#success##6:wybe.bool) @char:nn:nn
 
 
 
@@ -236,11 +236,11 @@ printit(ob##0:mixed_fields)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}>:
 
 ~= > public {inline} (0 calls)
 0: mixed_fields.~=<0>
-~=(#left##0:mixed_fields, #right##0:mixed_fields, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:mixed_fields, #right##0:mixed_fields, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    mixed_fields.=<0>(~#left##0:mixed_fields, ~#right##0:mixed_fields, ?tmp#0##0:wybe.bool) #0
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    mixed_fields.=<0>(~#left##0:mixed_fields, ~#right##0:mixed_fields, ?#success##0:wybe.bool) #0
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 

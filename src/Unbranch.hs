@@ -182,7 +182,7 @@ addTestOutParam params = insertAt (testOutIndex $ content <$> params) (Unplaced 
 -- ProcFunctor to determinise a statement
 addTestOutExp :: ProcFunctor -> [Placed Exp] -> Unbrancher ([Placed Exp], Exp)
 addTestOutExp func args = do
-    testResultVar <- tempVar
+    let testResultVar = outputStatusName
     (nParams, detism) <- case func of
         Higher fn ->
             case content fn of
@@ -404,7 +404,7 @@ unbranchStmt :: Determinism -> Stmt -> OptPos -> [Placed Stmt] -> [Placed Stmt]
 unbranchStmt _ stmt@(ProcCall _ _ True args) _ _ _ _ =
     shouldnt $ "Resources should have been handled before unbranching: "
                ++ showStmt 4 stmt
-unbranchStmt SemiDet stmt@(ProcCall func SemiDet _ args) pos
+unbranchStmt _ stmt@(ProcCall func SemiDet _ args) pos
              stmts alt sense = do
     logUnbranch $ "converting SemiDet proc call" ++ show stmt
     (args', val) <- addTestOutExp func args

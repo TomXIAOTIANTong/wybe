@@ -1,4 +1,94 @@
 ======================================================================
+AFTER TYPE CHECK:
+ Module bad
+  representation  : (not a type)
+  public submods  : 
+  public resources: 
+  public procs    : 
+  imports         : use wybe
+  resources       : 
+  procs           : 
+
+bad > (0 calls)
+0: bad(x:wybe.int @bad:1:9, ?y:wybe.int @bad:1:17):
+    {test} wybe.int.<0><(x:wybe.int @bad:1:26, 0:wybe.int @bad:1:30)
+    foreign llvm move(0:wybe.int @bad:1:39, ?y:wybe.int @bad:1:35)
+
+LLVM code       : None
+
+[1mUnbranch: [0m** Unbranching proc bad:
+[1mUnbranch: [0mbad > (0 calls)
+[1mUnbranch: [0m0: bad(x:wybe.int @bad:1:9, ?y:wybe.int @bad:1:17):
+[1mUnbranch: [0m    {test} wybe.int.<0><(x:wybe.int @bad:1:26, 0:wybe.int @bad:1:30)
+[1mUnbranch: [0m    foreign llvm move(0:wybe.int @bad:1:39, ?y:wybe.int @bad:1:35)
+[1mUnbranch: [0m** Unbranching with output params:[?y:wybe.int @bad:1:17]
+[1mUnbranch: [0m** Unbranching with output args:[?y:wybe.int @bad:1:17]
+[1mUnbranch: [0munbranching Det stmt
+[1mUnbranch: [0m    {test} wybe.int.<0><(x:wybe.int @bad:1:26, 0:wybe.int @bad:1:30)
+[1mUnbranch: [0m  with vars {x::wybe.int}
+[1mUnbranch: [0mconverting SemiDet proc call{{test} wybe.int.<0><(x:wybe.int @bad:1:26, 0:wybe.int @bad:1:30)}
+[1mUnbranch: [0munbranching SemiDet stmt
+[1mUnbranch: [0m    foreign llvm move(0:wybe.int @bad:1:39, ?y:wybe.int @bad:1:35)
+[1mUnbranch: [0m  with vars {#success::wybe.bool, x::wybe.int}
+[1mUnbranch: [0mUnbranching foreign call foreign llvm move(0:wybe.int @bad:1:39, ?y:wybe.int @bad:1:35)
+[1mUnbranch: [0mLeaving stmt as is: foreign llvm move(0:wybe.int @bad:1:39, ?y:wybe.int @bad:1:35)
+[1mUnbranch: [0mUnbranching an empty SemiDet body
+[1mUnbranch: [0mmkCond True #success:wybe.bool
+[1mUnbranch: [0m    foreign llvm move(0:wybe.int @bad:1:39, ?y:wybe.int @bad:1:35)
+[1mUnbranch: [0melse
+[1mUnbranch: [0m#Converted SemiDet proc call{{test} wybe.int.<0><(x:wybe.int @bad:1:26, 0:wybe.int @bad:1:30)}
+[1mUnbranch: [0m#To: 
+[1mUnbranch: [0m    wybe.int.<0><(x:wybe.int @bad:1:26, 0:wybe.int @bad:1:30, ?#success:wybe.bool)
+[1mUnbranch: [0m    if {testbool #success:wybe.bool::
+[1mUnbranch: [0m
+[1mUnbranch: [0m        foreign llvm move(0:wybe.int @bad:1:39, ?y:wybe.int @bad:1:35)
+[1mUnbranch: [0m    else::
+[1mUnbranch: [0m
+[1mUnbranch: [0m    }
+[1mUnbranch: [0m   condition -> {#success::wybe.bool, x::wybe.int}
+[1mUnbranch: [0m   then&else -> {#success::wybe.bool, x::wybe.int, y::wybe.int}
+[1mUnbranch: [0m   resources -> {}
+[1mUnbranch: [0m** Unbranched defn:
+[1mUnbranch: [0mbad > (0 calls)
+[1mUnbranch: [0m0: bad(x:wybe.int @bad:1:9, ?y:wybe.int @bad:1:17):
+[1mUnbranch: [0m    wybe.int.<0><(x:wybe.int @bad:1:26, 0:wybe.int @bad:1:30, ?#success:wybe.bool)
+[1mUnbranch: [0m    if {testbool #success:wybe.bool::
+[1mUnbranch: [0m
+[1mUnbranch: [0m        foreign llvm move(0:wybe.int @bad:1:39, ?y:wybe.int @bad:1:35)
+[1mUnbranch: [0m    else::
+[1mUnbranch: [0m
+[1mUnbranch: [0m    }
+[1mUnbranch: [0m   condition -> {#success::wybe.bool, x::wybe.int}
+[1mUnbranch: [0m   then&else -> {#success::wybe.bool, x::wybe.int, y::wybe.int}
+[1mUnbranch: [0m   resources -> {}
+[1mUnbranch: [0m================================================
+======================================================================
+AFTER UNBRANCHING:
+ Module bad
+  representation  : (not a type)
+  public submods  : 
+  public resources: 
+  public procs    : 
+  imports         : use wybe
+  resources       : 
+  procs           : 
+
+bad > (0 calls)
+0: bad(x:wybe.int @bad:1:9, ?y:wybe.int @bad:1:17):
+    wybe.int.<0><(x:wybe.int @bad:1:26, 0:wybe.int @bad:1:30, ?#success:wybe.bool)
+    if {testbool #success:wybe.bool::
+
+        foreign llvm move(0:wybe.int @bad:1:39, ?y:wybe.int @bad:1:35)
+    else::
+
+    }
+   condition -> {#success::wybe.bool, x::wybe.int}
+   then&else -> {#success::wybe.bool, x::wybe.int, y::wybe.int}
+   resources -> {}
+
+LLVM code       : None
+
+======================================================================
 AFTER EVERYTHING:
  Module bad
   representation  : (not a type)
@@ -9,12 +99,19 @@ AFTER EVERYTHING:
   resources       : 
   procs           : 
 
-bad > {inline} (0 calls)
+bad > (0 calls)
 0: bad.bad<0>
-bad([x##0:wybe.int], ?y##0:wybe.int)<{}; {}; {}>:
+bad(x##0:wybe.int, ?y##0:wybe.int)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm move(0:wybe.int, ?y##0:wybe.int) @bad:1:35
+    foreign llvm icmp_slt(~x##0:wybe.int, 0:wybe.int, ?#success##0:wybe.bool) @int:87:29
+    case ~#success##0:wybe.bool of
+    0:
+        foreign llvm move(undef:wybe.int, ?y##0:wybe.int)
+
+    1:
+        foreign llvm move(0:wybe.int, ?y##0:wybe.int) @bad:1:35
+
 
   LLVM code       :
 
@@ -30,7 +127,12 @@ declare external ccc  i8* @wybe_malloc(i32)
 declare external ccc  void @llvm.memcpy.p0i8.p0i8.i32(i8*, i8*, i32, i1)    
 
 
-define external fastcc  i64 @"bad.bad<0>"() alwaysinline   {
+define external fastcc  i64 @"bad.bad<0>"(i64  %"x##0")    {
 entry:
+  %0 = icmp slt i64 %"x##0", 0 
+  br i1 %0, label %if.then, label %if.else 
+if.then:
   ret i64 0 
+if.else:
+  ret i64 undef 
 }

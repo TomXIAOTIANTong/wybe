@@ -15,9 +15,9 @@ module top-level code > public {semipure} (0 calls)
   AliasPairs: []
   InterestingCallProperties: []
     wybe.string.print<0>("all good":wybe.string)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #13 @string:nn:nn
-    foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#8##0:wybe.phantom) @io:nn:nn
-    foreign c putchar('\n':wybe.char, ~tmp#8##0:wybe.phantom, ?tmp#9##0:wybe.phantom) @io:nn:nn
-    foreign lpvm store(~%tmp#9##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
+    foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#5##0:wybe.phantom) @io:nn:nn
+    foreign c putchar('\n':wybe.char, ~tmp#5##0:wybe.phantom, ?tmp#6##0:wybe.phantom) @io:nn:nn
+    foreign lpvm store(~%tmp#6##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
     disjunctive-cond.#cont#1<0>(1:wybe.bool, 0:wybe.bool)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #9
 
 
@@ -31,24 +31,24 @@ module top-level code > public {semipure} (0 calls)
         case ~b##0:wybe.bool of
         0:
             wybe.string.print<0>("no good":wybe.string)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #6 @string:nn:nn
-            foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#4##0:wybe.phantom) @io:nn:nn
-            foreign c putchar('\n':wybe.char, ~tmp#4##0:wybe.phantom, ?tmp#5##0:wybe.phantom) @io:nn:nn
-            foreign lpvm store(~%tmp#5##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
+            foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#3##0:wybe.phantom) @io:nn:nn
+            foreign c putchar('\n':wybe.char, ~tmp#3##0:wybe.phantom, ?tmp#4##0:wybe.phantom) @io:nn:nn
+            foreign lpvm store(~%tmp#4##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
             disjunctive-cond.#cont#2<0>(0:wybe.bool, 0:wybe.bool)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #5
 
         1:
             wybe.string.print<0>("also good":wybe.string)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #7 @string:nn:nn
-            foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#7##0:wybe.phantom) @io:nn:nn
-            foreign c putchar('\n':wybe.char, ~tmp#7##0:wybe.phantom, ?tmp#8##0:wybe.phantom) @io:nn:nn
-            foreign lpvm store(~%tmp#8##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
+            foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#6##0:wybe.phantom) @io:nn:nn
+            foreign c putchar('\n':wybe.char, ~tmp#6##0:wybe.phantom, ?tmp#7##0:wybe.phantom) @io:nn:nn
+            foreign lpvm store(~%tmp#7##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
             disjunctive-cond.#cont#2<0>(0:wybe.bool, 1:wybe.bool)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #3
 
 
     1:
         wybe.string.print<0>("also good":wybe.string)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #8 @string:nn:nn
-        foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#10##0:wybe.phantom) @io:nn:nn
-        foreign c putchar('\n':wybe.char, ~tmp#10##0:wybe.phantom, ?tmp#11##0:wybe.phantom) @io:nn:nn
-        foreign lpvm store(~%tmp#11##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
+        foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#9##0:wybe.phantom) @io:nn:nn
+        foreign c putchar('\n':wybe.char, ~tmp#9##0:wybe.phantom, ?tmp#10##0:wybe.phantom) @io:nn:nn
+        foreign lpvm store(~%tmp#10##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
         disjunctive-cond.#cont#2<0>(1:wybe.bool, ~b##0:wybe.bool)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #1
 
 
@@ -60,8 +60,8 @@ module top-level code > public {semipure} (0 calls)
   InterestingCallProperties: []
     case ~a##0:wybe.bool of
     0:
-        foreign llvm xor(b##0:wybe.bool, 1:wybe.bool, ?tmp#2##0:wybe.bool) @bool:nn:nn
-        case ~tmp#2##0:wybe.bool of
+        foreign llvm xor(b##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool) @bool:nn:nn
+        case ~#success##0:wybe.bool of
         0:
             disjunctive-cond.#cont#3<0>(0:wybe.bool, ~b##0:wybe.bool)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #11
 
@@ -73,16 +73,16 @@ module top-level code > public {semipure} (0 calls)
         case ~b##0:wybe.bool of
         0:
             wybe.string.print<0>("more good":wybe.string)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #12 @string:nn:nn
-            foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#6##0:wybe.phantom) @io:nn:nn
-            foreign c putchar('\n':wybe.char, ~tmp#6##0:wybe.phantom, ?tmp#7##0:wybe.phantom) @io:nn:nn
-            foreign lpvm store(~%tmp#7##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
+            foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#5##0:wybe.phantom) @io:nn:nn
+            foreign c putchar('\n':wybe.char, ~tmp#5##0:wybe.phantom, ?tmp#6##0:wybe.phantom) @io:nn:nn
+            foreign lpvm store(~%tmp#6##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
             disjunctive-cond.#cont#3<0>(1:wybe.bool, 0:wybe.bool)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #4
 
         1:
             wybe.string.print<0>("no good":wybe.string)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #13 @string:nn:nn
-            foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#9##0:wybe.phantom) @io:nn:nn
-            foreign c putchar('\n':wybe.char, ~tmp#9##0:wybe.phantom, ?tmp#10##0:wybe.phantom) @io:nn:nn
-            foreign lpvm store(~%tmp#10##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
+            foreign lpvm load(<<wybe.io.io>>:wybe.phantom, ?%tmp#8##0:wybe.phantom) @io:nn:nn
+            foreign c putchar('\n':wybe.char, ~tmp#8##0:wybe.phantom, ?tmp#9##0:wybe.phantom) @io:nn:nn
+            foreign lpvm store(~%tmp#9##0:wybe.phantom, <<wybe.io.io>>:wybe.phantom) @io:nn:nn
             disjunctive-cond.#cont#3<0>(1:wybe.bool, 1:wybe.bool)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #1
 
 

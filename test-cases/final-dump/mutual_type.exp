@@ -46,32 +46,32 @@ declare external ccc  void @llvm.memcpy.p0i8.p0i8.i32(i8*, i8*, i32, i1)
 
 = > public (1 calls)
 0: mutual_type.a.=<0>
-=(#left##0:mutual_type.a, #right##0:mutual_type.a, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:mutual_type.a, #right##0:mutual_type.a, ?#success##4:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
     foreign llvm icmp_ne(#left##0:wybe.int, 0:wybe.int, ?tmp#0##0:wybe.bool)
     case ~tmp#0##0:wybe.bool of
     0:
-        foreign llvm icmp_eq(~#right##0:mutual_type.a, 0:mutual_type.a, ?#success##0:wybe.bool)
+        foreign llvm icmp_eq(~#right##0:mutual_type.a, 0:mutual_type.a, ?#success##4:wybe.bool)
 
     1:
         foreign lpvm access(#left##0:mutual_type.a, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?#left#ahead##0:wybe.int) @mutual_type:nn:nn
         foreign lpvm access(~#left##0:mutual_type.a, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?#left#atail##0:mutual_type.b) @mutual_type:nn:nn
-        foreign llvm icmp_ne(#right##0:wybe.int, 0:wybe.int, ?tmp#9##0:wybe.bool)
-        case ~tmp#9##0:wybe.bool of
+        foreign llvm icmp_ne(#right##0:wybe.int, 0:wybe.int, ?tmp#5##0:wybe.bool)
+        case ~tmp#5##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##4:wybe.bool)
 
         1:
             foreign lpvm access(#right##0:mutual_type.a, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?#right#ahead##0:wybe.int) @mutual_type:nn:nn
             foreign lpvm access(~#right##0:mutual_type.a, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?#right#atail##0:mutual_type.b) @mutual_type:nn:nn
-            foreign llvm icmp_eq(~#left#ahead##0:wybe.int, ~#right#ahead##0:wybe.int, ?tmp#4##0:wybe.bool) @int:nn:nn
-            case ~tmp#4##0:wybe.bool of
+            foreign llvm icmp_eq(~#left#ahead##0:wybe.int, ~#right#ahead##0:wybe.int, ?#success##2:wybe.bool) @int:nn:nn
+            case ~#success##2:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##4:wybe.bool)
 
             1:
-                mutual_type.b.=<0>(~#left#atail##0:mutual_type.b, ~#right#atail##0:mutual_type.b, ?#success##0:wybe.bool) #3
+                mutual_type.b.=<0>(~#left#atail##0:mutual_type.b, ~#right#atail##0:mutual_type.b, ?#success##4:wybe.bool) #3
 
 
 
@@ -178,11 +178,11 @@ no_a(?#result##0:mutual_type.a)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: mutual_type.a.~=<0>
-~=(#left##0:mutual_type.a, #right##0:mutual_type.a, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:mutual_type.a, #right##0:mutual_type.a, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    mutual_type.a.=<0>(~#left##0:mutual_type.a, ~#right##0:mutual_type.a, ?tmp#0##0:wybe.bool) #0
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    mutual_type.a.=<0>(~#left##0:mutual_type.a, ~#right##0:mutual_type.a, ?#success##0:wybe.bool) #0
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -384,32 +384,32 @@ entry:
 
 = > public (1 calls)
 0: mutual_type.b.=<0>
-=(#left##0:mutual_type.b, #right##0:mutual_type.b, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:mutual_type.b, #right##0:mutual_type.b, ?#success##4:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
     foreign llvm icmp_ne(#left##0:wybe.int, 0:wybe.int, ?tmp#0##0:wybe.bool)
     case ~tmp#0##0:wybe.bool of
     0:
-        foreign llvm icmp_eq(~#right##0:mutual_type.b, 0:mutual_type.b, ?#success##0:wybe.bool)
+        foreign llvm icmp_eq(~#right##0:mutual_type.b, 0:mutual_type.b, ?#success##4:wybe.bool)
 
     1:
         foreign lpvm access(#left##0:mutual_type.b, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?#left#bhead##0:wybe.int) @mutual_type:nn:nn
         foreign lpvm access(~#left##0:mutual_type.b, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?#left#btail##0:mutual_type.a) @mutual_type:nn:nn
-        foreign llvm icmp_ne(#right##0:wybe.int, 0:wybe.int, ?tmp#9##0:wybe.bool)
-        case ~tmp#9##0:wybe.bool of
+        foreign llvm icmp_ne(#right##0:wybe.int, 0:wybe.int, ?tmp#5##0:wybe.bool)
+        case ~tmp#5##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##4:wybe.bool)
 
         1:
             foreign lpvm access(#right##0:mutual_type.b, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?#right#bhead##0:wybe.int) @mutual_type:nn:nn
             foreign lpvm access(~#right##0:mutual_type.b, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?#right#btail##0:mutual_type.a) @mutual_type:nn:nn
-            foreign llvm icmp_eq(~#left#bhead##0:wybe.int, ~#right#bhead##0:wybe.int, ?tmp#4##0:wybe.bool) @int:nn:nn
-            case ~tmp#4##0:wybe.bool of
+            foreign llvm icmp_eq(~#left#bhead##0:wybe.int, ~#right#bhead##0:wybe.int, ?#success##2:wybe.bool) @int:nn:nn
+            case ~#success##2:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##4:wybe.bool)
 
             1:
-                mutual_type.a.=<0>(~#left#btail##0:mutual_type.a, ~#right#btail##0:mutual_type.a, ?#success##0:wybe.bool) #3
+                mutual_type.a.=<0>(~#left#btail##0:mutual_type.a, ~#right#btail##0:mutual_type.a, ?#success##4:wybe.bool) #3
 
 
 
@@ -516,11 +516,11 @@ no_b(?#result##0:mutual_type.b)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: mutual_type.b.~=<0>
-~=(#left##0:mutual_type.b, #right##0:mutual_type.b, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:mutual_type.b, #right##0:mutual_type.b, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    mutual_type.b.=<0>(~#left##0:mutual_type.b, ~#right##0:mutual_type.b, ?tmp#0##0:wybe.bool) #0
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    mutual_type.b.=<0>(~#left##0:mutual_type.b, ~#right##0:mutual_type.b, ?#success##0:wybe.bool) #0
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 

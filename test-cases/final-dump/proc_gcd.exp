@@ -35,14 +35,14 @@ gcd#cont#1 > (2 calls)
 gcd#cont#1([t##0:wybe.int], x##0:wybe.int, y##0:wybe.int, ?r##0:wybe.int)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm icmp_ne(y##0:wybe.int, 0:wybe.int, ?tmp#0##0:wybe.bool) @int:nn:nn
-    case ~tmp#0##0:wybe.bool of
+    foreign llvm icmp_ne(y##0:wybe.int, 0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+    case ~#success##0:wybe.bool of
     0:
         foreign llvm move(~x##0:wybe.int, ?r##0:wybe.int) @proc_gcd:nn:nn
 
     1:
-        proc_gcd.mod<0>(~x##0:wybe.int, y##0:wybe.int, ?tmp#6##0:wybe.int)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #2 @proc_gcd:nn:nn
-        proc_gcd.gcd#cont#1<0>(_:wybe.int, ~y##0:wybe.int, ~tmp#6##0:wybe.int, ?r##0:wybe.int)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #3 @proc_gcd:nn:nn
+        proc_gcd.mod<0>(~x##0:wybe.int, y##0:wybe.int, ?tmp#5##0:wybe.int)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #2 @proc_gcd:nn:nn
+        proc_gcd.gcd#cont#1<0>(_:wybe.int, ~y##0:wybe.int, ~tmp#5##0:wybe.int, ?r##0:wybe.int)<{<<wybe.io.io>>}; {<<wybe.io.io>>}; {}> #3 @proc_gcd:nn:nn
 
 
 

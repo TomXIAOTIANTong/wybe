@@ -162,20 +162,20 @@ entry:
 
 = > public {inline} (1 calls)
 0: alias_type4.position.=<0>
-=(#left##0:alias_type4.position, #right##0:alias_type4.position, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:alias_type4.position, #right##0:alias_type4.position, ?#success##2:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
     foreign lpvm access(#left##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?#left#x##0:wybe.int) @alias_type4:nn:nn
     foreign lpvm access(~#left##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?#left#y##0:wybe.int) @alias_type4:nn:nn
     foreign lpvm access(#right##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?#right#x##0:wybe.int) @alias_type4:nn:nn
     foreign lpvm access(~#right##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?#right#y##0:wybe.int) @alias_type4:nn:nn
-    foreign llvm icmp_eq(~#left#x##0:wybe.int, ~#right#x##0:wybe.int, ?tmp#1##0:wybe.bool) @int:nn:nn
-    case ~tmp#1##0:wybe.bool of
+    foreign llvm icmp_eq(~#left#x##0:wybe.int, ~#right#x##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+    case ~#success##0:wybe.bool of
     0:
-        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm move(0:wybe.bool, ?#success##2:wybe.bool)
 
     1:
-        foreign llvm icmp_eq(~#left#y##0:wybe.int, ~#right#y##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+        foreign llvm icmp_eq(~#left#y##0:wybe.int, ~#right#y##0:wybe.int, ?#success##2:wybe.bool) @int:nn:nn
 
 
 
@@ -226,22 +226,22 @@ y(#rec##0:alias_type4.position, ?#rec##1:alias_type4.position, #field##0:wybe.in
 
 ~= > public {inline} (0 calls)
 0: alias_type4.position.~=<0>
-~=(#left##0:alias_type4.position, #right##0:alias_type4.position, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:alias_type4.position, #right##0:alias_type4.position, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign lpvm access(#left##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#3##0:wybe.int) @alias_type4:nn:nn
-    foreign lpvm access(~#left##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#4##0:wybe.int) @alias_type4:nn:nn
-    foreign lpvm access(#right##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#5##0:wybe.int) @alias_type4:nn:nn
-    foreign lpvm access(~#right##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#6##0:wybe.int) @alias_type4:nn:nn
-    foreign llvm icmp_eq(~tmp#3##0:wybe.int, ~tmp#5##0:wybe.int, ?tmp#7##0:wybe.bool) @int:nn:nn
-    case ~tmp#7##0:wybe.bool of
+    foreign lpvm access(#left##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#2##0:wybe.int) @alias_type4:nn:nn
+    foreign lpvm access(~#left##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#3##0:wybe.int) @alias_type4:nn:nn
+    foreign lpvm access(#right##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#4##0:wybe.int) @alias_type4:nn:nn
+    foreign lpvm access(~#right##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#5##0:wybe.int) @alias_type4:nn:nn
+    foreign llvm icmp_eq(~tmp#2##0:wybe.int, ~tmp#4##0:wybe.int, ?tmp#6##0:wybe.bool) @int:nn:nn
+    case ~tmp#6##0:wybe.bool of
     0:
-        foreign llvm move(0:wybe.bool, ?tmp#0##0:wybe.bool)
-        foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
     1:
-        foreign llvm icmp_eq(~tmp#4##0:wybe.int, ~tmp#6##0:wybe.int, ?tmp#0##0:wybe.bool) @int:nn:nn
-        foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm icmp_eq(~tmp#3##0:wybe.int, ~tmp#5##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+        foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
 
   LLVM code       :
@@ -397,30 +397,30 @@ if.else:
 
 = > public {inline} (1 calls)
 0: alias_type4.posrec.=<0>
-=(#left##0:alias_type4.posrec, #right##0:alias_type4.posrec, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:alias_type4.posrec, #right##0:alias_type4.posrec, ?#success##2:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
     foreign lpvm access(#left##0:alias_type4.posrec, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?#left#p##0:alias_type4.position) @alias_type4:nn:nn
     foreign lpvm access(~#left##0:alias_type4.posrec, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?#left#a##0:wybe.int) @alias_type4:nn:nn
     foreign lpvm access(#right##0:alias_type4.posrec, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?#right#p##0:alias_type4.position) @alias_type4:nn:nn
     foreign lpvm access(~#right##0:alias_type4.posrec, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?#right#a##0:wybe.int) @alias_type4:nn:nn
-    foreign lpvm access(#left#p##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#7##0:wybe.int) @alias_type4:nn:nn
-    foreign lpvm access(~#left#p##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#8##0:wybe.int) @alias_type4:nn:nn
-    foreign lpvm access(#right#p##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#9##0:wybe.int) @alias_type4:nn:nn
-    foreign lpvm access(~#right#p##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#10##0:wybe.int) @alias_type4:nn:nn
-    foreign llvm icmp_eq(~tmp#7##0:wybe.int, ~tmp#9##0:wybe.int, ?tmp#11##0:wybe.bool) @int:nn:nn
-    case ~tmp#11##0:wybe.bool of
+    foreign lpvm access(#left#p##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#5##0:wybe.int) @alias_type4:nn:nn
+    foreign lpvm access(~#left#p##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#6##0:wybe.int) @alias_type4:nn:nn
+    foreign lpvm access(#right#p##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#7##0:wybe.int) @alias_type4:nn:nn
+    foreign lpvm access(~#right#p##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#8##0:wybe.int) @alias_type4:nn:nn
+    foreign llvm icmp_eq(~tmp#5##0:wybe.int, ~tmp#7##0:wybe.int, ?tmp#9##0:wybe.bool) @int:nn:nn
+    case ~tmp#9##0:wybe.bool of
     0:
-        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm move(0:wybe.bool, ?#success##2:wybe.bool)
 
     1:
-        foreign llvm icmp_eq(~tmp#10##0:wybe.int, ~tmp#8##0:wybe.int, ?tmp#1##0:wybe.bool) @int:nn:nn
-        case ~tmp#1##0:wybe.bool of
+        foreign llvm icmp_eq(~tmp#6##0:wybe.int, ~tmp#8##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+        case ~#success##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##2:wybe.bool)
 
         1:
-            foreign llvm icmp_eq(~#left#a##0:wybe.int, ~#right#a##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+            foreign llvm icmp_eq(~#left#a##0:wybe.int, ~#right#a##0:wybe.int, ?#success##2:wybe.bool) @int:nn:nn
 
 
 
@@ -472,33 +472,33 @@ posrec(?p##0:alias_type4.position, ?a##0:wybe.int, #result##0:alias_type4.posrec
 
 ~= > public {inline} (0 calls)
 0: alias_type4.posrec.~=<0>
-~=(#left##0:alias_type4.posrec, #right##0:alias_type4.posrec, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:alias_type4.posrec, #right##0:alias_type4.posrec, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign lpvm access(#left##0:alias_type4.posrec, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#3##0:alias_type4.position) @alias_type4:nn:nn
-    foreign lpvm access(~#left##0:alias_type4.posrec, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#4##0:wybe.int) @alias_type4:nn:nn
-    foreign lpvm access(#right##0:alias_type4.posrec, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#5##0:alias_type4.position) @alias_type4:nn:nn
-    foreign lpvm access(~#right##0:alias_type4.posrec, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#6##0:wybe.int) @alias_type4:nn:nn
-    foreign lpvm access(tmp#3##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#7##0:wybe.int) @alias_type4:nn:nn
-    foreign lpvm access(~tmp#3##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#8##0:wybe.int) @alias_type4:nn:nn
-    foreign lpvm access(tmp#5##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#9##0:wybe.int) @alias_type4:nn:nn
-    foreign lpvm access(~tmp#5##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#10##0:wybe.int) @alias_type4:nn:nn
-    foreign llvm icmp_eq(~tmp#7##0:wybe.int, ~tmp#9##0:wybe.int, ?tmp#11##0:wybe.bool) @int:nn:nn
-    case ~tmp#11##0:wybe.bool of
+    foreign lpvm access(#left##0:alias_type4.posrec, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#2##0:alias_type4.position) @alias_type4:nn:nn
+    foreign lpvm access(~#left##0:alias_type4.posrec, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#3##0:wybe.int) @alias_type4:nn:nn
+    foreign lpvm access(#right##0:alias_type4.posrec, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#4##0:alias_type4.position) @alias_type4:nn:nn
+    foreign lpvm access(~#right##0:alias_type4.posrec, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#5##0:wybe.int) @alias_type4:nn:nn
+    foreign lpvm access(tmp#2##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#6##0:wybe.int) @alias_type4:nn:nn
+    foreign lpvm access(~tmp#2##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#7##0:wybe.int) @alias_type4:nn:nn
+    foreign lpvm access(tmp#4##0:alias_type4.position, 0:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#8##0:wybe.int) @alias_type4:nn:nn
+    foreign lpvm access(~tmp#4##0:alias_type4.position, 8:wybe.int, 16:wybe.int, 0:wybe.int, ?tmp#9##0:wybe.int) @alias_type4:nn:nn
+    foreign llvm icmp_eq(~tmp#6##0:wybe.int, ~tmp#8##0:wybe.int, ?tmp#10##0:wybe.bool) @int:nn:nn
+    case ~tmp#10##0:wybe.bool of
     0:
-        foreign llvm move(0:wybe.bool, ?tmp#0##0:wybe.bool)
-        foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+        foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
     1:
-        foreign llvm icmp_eq(~tmp#10##0:wybe.int, ~tmp#8##0:wybe.int, ?tmp#12##0:wybe.bool) @int:nn:nn
-        case ~tmp#12##0:wybe.bool of
+        foreign llvm icmp_eq(~tmp#7##0:wybe.int, ~tmp#9##0:wybe.int, ?tmp#11##0:wybe.bool) @int:nn:nn
+        case ~tmp#11##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?tmp#0##0:wybe.bool)
-            foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
         1:
-            foreign llvm icmp_eq(~tmp#4##0:wybe.int, ~tmp#6##0:wybe.int, ?tmp#0##0:wybe.bool) @int:nn:nn
-            foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm icmp_eq(~tmp#3##0:wybe.int, ~tmp#5##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+            foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
 
 
@@ -541,7 +541,7 @@ entry:
   %20 = icmp eq i64 %11, %16 
   br i1 %20, label %if.then, label %if.else 
 if.then:
-  %21 = icmp eq i64 %19, %14 
+  %21 = icmp eq i64 %14, %19 
   br i1 %21, label %if.then1, label %if.else1 
 if.else:
   ret i1 0 
@@ -653,7 +653,7 @@ entry:
   %20 = icmp eq i64 %11, %16 
   br i1 %20, label %if.then, label %if.else 
 if.then:
-  %21 = icmp eq i64 %19, %14 
+  %21 = icmp eq i64 %14, %19 
   br i1 %21, label %if.then1, label %if.else1 
 if.else:
   %25 = xor i1 0, 1 

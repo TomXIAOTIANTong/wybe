@@ -3987,6 +3987,7 @@ instance Show PrimVarName where
 -- |Show a single statement.
 showStmt :: Int -> Stmt -> String
 showStmt _ (ProcCall func detism resourceful args) =
+    (if detism /= Det then "{" ++ determinismName detism ++ "} " else "")++
     (if resourceful then "!" else "")
     ++ show func ++ showArguments args
 showStmt _ (ForeignCall lang name flags args) =

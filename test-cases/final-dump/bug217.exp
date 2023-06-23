@@ -56,10 +56,10 @@ foo(?#result##0:bug217.foo)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: bug217.foo.~=<0>
-~=([#left##0:bug217.foo], [#right##0:bug217.foo], ?#success##0:wybe.bool)<{}; {}; {}>:
+~=([#left##0:bug217.foo], [#right##0:bug217.foo], ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm move(0:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -121,10 +121,10 @@ bar(?#result##0:bug217.foo.bar)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: bug217.foo.bar.~=<0>
-~=([#left##0:bug217.foo.bar], [#right##0:bug217.foo.bar], ?#success##0:wybe.bool)<{}; {}; {}>:
+~=([#left##0:bug217.foo.bar], [#right##0:bug217.foo.bar], ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm move(0:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 

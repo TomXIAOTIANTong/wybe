@@ -1,4 +1,4 @@
 def append(x:list(T),y:list(T)):list(T) =
-    if { x = [] :: y
+    if { empty(x) :: y
        | else :: [head(x) | append(tail(x), y)]
     }

@@ -270,11 +270,11 @@ suit(#rec##0:multictr.card, ?#rec##2:multictr.card, #field##0:multictr.suit)<{};
 
 ~= > public {inline} (0 calls)
 0: multictr.card.~=<0>
-~=(#left##0:multictr.card, #right##0:multictr.card, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:multictr.card, #right##0:multictr.card, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm icmp_eq(~#left##0:multictr.card, ~#right##0:multictr.card, ?tmp#0##0:wybe.bool)
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm icmp_eq(~#left##0:multictr.card, ~#right##0:multictr.card, ?#success##0:wybe.bool)
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -448,221 +448,221 @@ entry:
 
 = > public (1 calls)
 0: multictr.complicated.=<0>
-=(#left##0:multictr.complicated, #right##0:multictr.complicated, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:multictr.complicated, #right##0:multictr.complicated, ?#success##19:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
     foreign llvm icmp_uge(#left##0:wybe.int, 4:wybe.int, ?tmp#0##0:wybe.bool)
     case ~tmp#0##0:wybe.bool of
     0:
-        foreign llvm icmp_eq(~#left##0:multictr.complicated, ~#right##0:multictr.complicated, ?#success##0:wybe.bool)
+        foreign llvm icmp_eq(~#left##0:multictr.complicated, ~#right##0:multictr.complicated, ?#success##19:wybe.bool)
 
     1:
-        foreign llvm and(#left##0:wybe.int, 7:wybe.int, ?tmp#55##0:wybe.int)
-        foreign llvm icmp_eq(tmp#55##0:wybe.int, 7:wybe.int, ?tmp#84##0:wybe.bool)
-        case ~tmp#55##0:wybe.int of
+        foreign llvm and(#left##0:wybe.int, 7:wybe.int, ?tmp#4##0:wybe.int)
+        foreign llvm icmp_eq(tmp#4##0:wybe.int, 7:wybe.int, ?tmp#33##0:wybe.bool)
+        case ~tmp#4##0:wybe.int of
         0:
             foreign lpvm access(~#left##0:multictr.complicated, 0:wybe.int, 8:wybe.int, 0:wybe.int, ?#left#f01##0:wybe.int) @multictr:nn:nn
-            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#258##0:wybe.bool)
-            case ~tmp#258##0:wybe.bool of
+            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#207##0:wybe.bool)
+            case ~tmp#207##0:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
             1:
-                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#259##0:wybe.int)
-                foreign llvm icmp_eq(~tmp#259##0:wybe.int, 0:wybe.int, ?tmp#260##0:wybe.bool)
-                case ~tmp#260##0:wybe.bool of
+                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#208##0:wybe.int)
+                foreign llvm icmp_eq(~tmp#208##0:wybe.int, 0:wybe.int, ?tmp#209##0:wybe.bool)
+                case ~tmp#209##0:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                 1:
                     foreign lpvm access(~#right##0:multictr.complicated, 0:wybe.int, 8:wybe.int, 0:wybe.int, ?#right#f01##0:wybe.int) @multictr:nn:nn
-                    foreign llvm icmp_eq(~#left#f01##0:wybe.int, ~#right#f01##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                    foreign llvm icmp_eq(~#left#f01##0:wybe.int, ~#right#f01##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
         1:
             foreign lpvm access(~#left##0:multictr.complicated, -1:wybe.int, 8:wybe.int, 1:wybe.int, ?#left#f02##0:wybe.int) @multictr:nn:nn
-            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#252##0:wybe.bool)
-            case ~tmp#252##0:wybe.bool of
+            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#201##0:wybe.bool)
+            case ~tmp#201##0:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
             1:
-                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#253##0:wybe.int)
-                foreign llvm icmp_eq(~tmp#253##0:wybe.int, 1:wybe.int, ?tmp#254##0:wybe.bool)
-                case ~tmp#254##0:wybe.bool of
+                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#202##0:wybe.int)
+                foreign llvm icmp_eq(~tmp#202##0:wybe.int, 1:wybe.int, ?tmp#203##0:wybe.bool)
+                case ~tmp#203##0:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                 1:
                     foreign lpvm access(~#right##0:multictr.complicated, -1:wybe.int, 8:wybe.int, 1:wybe.int, ?#right#f02##0:wybe.int) @multictr:nn:nn
-                    foreign llvm icmp_eq(~#left#f02##0:wybe.int, ~#right#f02##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                    foreign llvm icmp_eq(~#left#f02##0:wybe.int, ~#right#f02##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
         2:
             foreign lpvm access(~#left##0:multictr.complicated, -2:wybe.int, 8:wybe.int, 2:wybe.int, ?#left#f03##0:wybe.int) @multictr:nn:nn
-            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#246##0:wybe.bool)
-            case ~tmp#246##0:wybe.bool of
+            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#195##0:wybe.bool)
+            case ~tmp#195##0:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
             1:
-                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#247##0:wybe.int)
-                foreign llvm icmp_eq(~tmp#247##0:wybe.int, 2:wybe.int, ?tmp#248##0:wybe.bool)
-                case ~tmp#248##0:wybe.bool of
+                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#196##0:wybe.int)
+                foreign llvm icmp_eq(~tmp#196##0:wybe.int, 2:wybe.int, ?tmp#197##0:wybe.bool)
+                case ~tmp#197##0:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                 1:
                     foreign lpvm access(~#right##0:multictr.complicated, -2:wybe.int, 8:wybe.int, 2:wybe.int, ?#right#f03##0:wybe.int) @multictr:nn:nn
-                    foreign llvm icmp_eq(~#left#f03##0:wybe.int, ~#right#f03##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                    foreign llvm icmp_eq(~#left#f03##0:wybe.int, ~#right#f03##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
         3:
             foreign lpvm access(~#left##0:multictr.complicated, -3:wybe.int, 8:wybe.int, 3:wybe.int, ?#left#f04##0:wybe.int) @multictr:nn:nn
-            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#240##0:wybe.bool)
-            case ~tmp#240##0:wybe.bool of
+            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#189##0:wybe.bool)
+            case ~tmp#189##0:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
             1:
-                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#241##0:wybe.int)
-                foreign llvm icmp_eq(~tmp#241##0:wybe.int, 3:wybe.int, ?tmp#242##0:wybe.bool)
-                case ~tmp#242##0:wybe.bool of
+                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#190##0:wybe.int)
+                foreign llvm icmp_eq(~tmp#190##0:wybe.int, 3:wybe.int, ?tmp#191##0:wybe.bool)
+                case ~tmp#191##0:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                 1:
                     foreign lpvm access(~#right##0:multictr.complicated, -3:wybe.int, 8:wybe.int, 3:wybe.int, ?#right#f04##0:wybe.int) @multictr:nn:nn
-                    foreign llvm icmp_eq(~#left#f04##0:wybe.int, ~#right#f04##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                    foreign llvm icmp_eq(~#left#f04##0:wybe.int, ~#right#f04##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
         4:
             foreign lpvm access(~#left##0:multictr.complicated, -4:wybe.int, 8:wybe.int, 4:wybe.int, ?#left#f05##0:wybe.int) @multictr:nn:nn
-            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#234##0:wybe.bool)
-            case ~tmp#234##0:wybe.bool of
+            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#183##0:wybe.bool)
+            case ~tmp#183##0:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
             1:
-                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#235##0:wybe.int)
-                foreign llvm icmp_eq(~tmp#235##0:wybe.int, 4:wybe.int, ?tmp#236##0:wybe.bool)
-                case ~tmp#236##0:wybe.bool of
+                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#184##0:wybe.int)
+                foreign llvm icmp_eq(~tmp#184##0:wybe.int, 4:wybe.int, ?tmp#185##0:wybe.bool)
+                case ~tmp#185##0:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                 1:
                     foreign lpvm access(~#right##0:multictr.complicated, -4:wybe.int, 8:wybe.int, 4:wybe.int, ?#right#f05##0:wybe.int) @multictr:nn:nn
-                    foreign llvm icmp_eq(~#left#f05##0:wybe.int, ~#right#f05##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                    foreign llvm icmp_eq(~#left#f05##0:wybe.int, ~#right#f05##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
         5:
             foreign lpvm access(~#left##0:multictr.complicated, -5:wybe.int, 8:wybe.int, 5:wybe.int, ?#left#f06##0:wybe.int) @multictr:nn:nn
-            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#228##0:wybe.bool)
-            case ~tmp#228##0:wybe.bool of
+            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#177##0:wybe.bool)
+            case ~tmp#177##0:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
             1:
-                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#229##0:wybe.int)
-                foreign llvm icmp_eq(~tmp#229##0:wybe.int, 5:wybe.int, ?tmp#230##0:wybe.bool)
-                case ~tmp#230##0:wybe.bool of
+                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#178##0:wybe.int)
+                foreign llvm icmp_eq(~tmp#178##0:wybe.int, 5:wybe.int, ?tmp#179##0:wybe.bool)
+                case ~tmp#179##0:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                 1:
                     foreign lpvm access(~#right##0:multictr.complicated, -5:wybe.int, 8:wybe.int, 5:wybe.int, ?#right#f06##0:wybe.int) @multictr:nn:nn
-                    foreign llvm icmp_eq(~#left#f06##0:wybe.int, ~#right#f06##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                    foreign llvm icmp_eq(~#left#f06##0:wybe.int, ~#right#f06##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
         6:
             foreign lpvm access(~#left##0:multictr.complicated, -6:wybe.int, 8:wybe.int, 6:wybe.int, ?#left#f07##0:wybe.int) @multictr:nn:nn
-            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#222##0:wybe.bool)
-            case ~tmp#222##0:wybe.bool of
+            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#171##0:wybe.bool)
+            case ~tmp#171##0:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
             1:
-                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#223##0:wybe.int)
-                foreign llvm icmp_eq(~tmp#223##0:wybe.int, 6:wybe.int, ?tmp#224##0:wybe.bool)
-                case ~tmp#224##0:wybe.bool of
+                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#172##0:wybe.int)
+                foreign llvm icmp_eq(~tmp#172##0:wybe.int, 6:wybe.int, ?tmp#173##0:wybe.bool)
+                case ~tmp#173##0:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                 1:
                     foreign lpvm access(~#right##0:multictr.complicated, -6:wybe.int, 8:wybe.int, 6:wybe.int, ?#right#f07##0:wybe.int) @multictr:nn:nn
-                    foreign llvm icmp_eq(~#left#f07##0:wybe.int, ~#right#f07##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                    foreign llvm icmp_eq(~#left#f07##0:wybe.int, ~#right#f07##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
         7:
-            foreign lpvm access(#left##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#85##0:16 bit unsigned) @multictr:nn:nn
-            foreign llvm icmp_eq(tmp#85##0:16 bit unsigned, 7:16 bit unsigned, ?tmp#86##0:wybe.bool)
-            case ~tmp#86##0:wybe.bool of
+            foreign lpvm access(#left##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#34##0:16 bit unsigned) @multictr:nn:nn
+            foreign llvm icmp_eq(tmp#34##0:16 bit unsigned, 7:16 bit unsigned, ?tmp#35##0:wybe.bool)
+            case ~tmp#35##0:wybe.bool of
             0:
-                foreign llvm icmp_eq(tmp#85##0:16 bit unsigned, 8:16 bit unsigned, ?tmp#92##0:wybe.bool)
-                case ~tmp#92##0:wybe.bool of
+                foreign llvm icmp_eq(tmp#34##0:16 bit unsigned, 8:16 bit unsigned, ?tmp#41##0:wybe.bool)
+                case ~tmp#41##0:wybe.bool of
                 0:
-                    case ~tmp#84##0:wybe.bool of
+                    case ~tmp#33##0:wybe.bool of
                     0:
-                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                        foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                     1:
-                        foreign llvm icmp_eq(tmp#85##0:16 bit unsigned, 9:16 bit unsigned, ?tmp#98##0:wybe.bool)
-                        case ~tmp#98##0:wybe.bool of
+                        foreign llvm icmp_eq(tmp#34##0:16 bit unsigned, 9:16 bit unsigned, ?tmp#47##0:wybe.bool)
+                        case ~tmp#47##0:wybe.bool of
                         0:
-                            foreign llvm icmp_eq(tmp#85##0:16 bit unsigned, 10:16 bit unsigned, ?tmp#104##0:wybe.bool)
-                            case ~tmp#104##0:wybe.bool of
+                            foreign llvm icmp_eq(tmp#34##0:16 bit unsigned, 10:16 bit unsigned, ?tmp#53##0:wybe.bool)
+                            case ~tmp#53##0:wybe.bool of
                             0:
-                                foreign llvm icmp_eq(tmp#85##0:16 bit unsigned, 11:16 bit unsigned, ?tmp#110##0:wybe.bool)
-                                case ~tmp#110##0:wybe.bool of
+                                foreign llvm icmp_eq(tmp#34##0:16 bit unsigned, 11:16 bit unsigned, ?tmp#59##0:wybe.bool)
+                                case ~tmp#59##0:wybe.bool of
                                 0:
-                                    foreign llvm icmp_eq(tmp#85##0:16 bit unsigned, 12:16 bit unsigned, ?tmp#116##0:wybe.bool)
-                                    case ~tmp#116##0:wybe.bool of
+                                    foreign llvm icmp_eq(tmp#34##0:16 bit unsigned, 12:16 bit unsigned, ?tmp#65##0:wybe.bool)
+                                    case ~tmp#65##0:wybe.bool of
                                     0:
-                                        foreign llvm icmp_eq(tmp#85##0:16 bit unsigned, 13:16 bit unsigned, ?tmp#122##0:wybe.bool)
-                                        case ~tmp#122##0:wybe.bool of
+                                        foreign llvm icmp_eq(tmp#34##0:16 bit unsigned, 13:16 bit unsigned, ?tmp#71##0:wybe.bool)
+                                        case ~tmp#71##0:wybe.bool of
                                         0:
-                                            foreign llvm icmp_eq(tmp#85##0:16 bit unsigned, 14:16 bit unsigned, ?tmp#128##0:wybe.bool)
-                                            case ~tmp#128##0:wybe.bool of
+                                            foreign llvm icmp_eq(tmp#34##0:16 bit unsigned, 14:16 bit unsigned, ?tmp#77##0:wybe.bool)
+                                            case ~tmp#77##0:wybe.bool of
                                             0:
-                                                foreign llvm icmp_eq(tmp#85##0:16 bit unsigned, 15:16 bit unsigned, ?tmp#134##0:wybe.bool)
-                                                case ~tmp#134##0:wybe.bool of
+                                                foreign llvm icmp_eq(tmp#34##0:16 bit unsigned, 15:16 bit unsigned, ?tmp#83##0:wybe.bool)
+                                                case ~tmp#83##0:wybe.bool of
                                                 0:
-                                                    foreign llvm icmp_eq(~tmp#85##0:16 bit unsigned, 16:16 bit unsigned, ?tmp#140##0:wybe.bool)
-                                                    case ~tmp#140##0:wybe.bool of
+                                                    foreign llvm icmp_eq(~tmp#34##0:16 bit unsigned, 16:16 bit unsigned, ?tmp#89##0:wybe.bool)
+                                                    case ~tmp#89##0:wybe.bool of
                                                     0:
-                                                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                        foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                     1:
                                                         foreign lpvm access(~#left##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#left#f17##0:wybe.int) @multictr:nn:nn
-                                                        foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#142##0:wybe.bool)
-                                                        case ~tmp#142##0:wybe.bool of
+                                                        foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#91##0:wybe.bool)
+                                                        case ~tmp#91##0:wybe.bool of
                                                         0:
-                                                            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                            foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                         1:
-                                                            foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#143##0:wybe.int)
-                                                            foreign llvm icmp_eq(~tmp#143##0:wybe.int, 7:wybe.int, ?tmp#144##0:wybe.bool)
-                                                            case ~tmp#144##0:wybe.bool of
+                                                            foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#92##0:wybe.int)
+                                                            foreign llvm icmp_eq(~tmp#92##0:wybe.int, 7:wybe.int, ?tmp#93##0:wybe.bool)
+                                                            case ~tmp#93##0:wybe.bool of
                                                             0:
-                                                                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                             1:
-                                                                foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#145##0:16 bit unsigned) @multictr:nn:nn
-                                                                foreign llvm icmp_eq(~tmp#145##0:16 bit unsigned, 16:16 bit unsigned, ?tmp#146##0:wybe.bool)
-                                                                case ~tmp#146##0:wybe.bool of
+                                                                foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#94##0:16 bit unsigned) @multictr:nn:nn
+                                                                foreign llvm icmp_eq(~tmp#94##0:16 bit unsigned, 16:16 bit unsigned, ?tmp#95##0:wybe.bool)
+                                                                case ~tmp#95##0:wybe.bool of
                                                                 0:
-                                                                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                                 1:
                                                                     foreign lpvm access(~#right##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#right#f17##0:wybe.int) @multictr:nn:nn
-                                                                    foreign llvm icmp_eq(~#left#f17##0:wybe.int, ~#right#f17##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                                                                    foreign llvm icmp_eq(~#left#f17##0:wybe.int, ~#right#f17##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
@@ -670,28 +670,28 @@ entry:
 
                                                 1:
                                                     foreign lpvm access(~#left##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#left#f16##0:wybe.int) @multictr:nn:nn
-                                                    foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#150##0:wybe.bool)
-                                                    case ~tmp#150##0:wybe.bool of
+                                                    foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#99##0:wybe.bool)
+                                                    case ~tmp#99##0:wybe.bool of
                                                     0:
-                                                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                        foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                     1:
-                                                        foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#151##0:wybe.int)
-                                                        foreign llvm icmp_eq(~tmp#151##0:wybe.int, 7:wybe.int, ?tmp#152##0:wybe.bool)
-                                                        case ~tmp#152##0:wybe.bool of
+                                                        foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#100##0:wybe.int)
+                                                        foreign llvm icmp_eq(~tmp#100##0:wybe.int, 7:wybe.int, ?tmp#101##0:wybe.bool)
+                                                        case ~tmp#101##0:wybe.bool of
                                                         0:
-                                                            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                            foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                         1:
-                                                            foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#153##0:16 bit unsigned) @multictr:nn:nn
-                                                            foreign llvm icmp_eq(~tmp#153##0:16 bit unsigned, 15:16 bit unsigned, ?tmp#154##0:wybe.bool)
-                                                            case ~tmp#154##0:wybe.bool of
+                                                            foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#102##0:16 bit unsigned) @multictr:nn:nn
+                                                            foreign llvm icmp_eq(~tmp#102##0:16 bit unsigned, 15:16 bit unsigned, ?tmp#103##0:wybe.bool)
+                                                            case ~tmp#103##0:wybe.bool of
                                                             0:
-                                                                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                             1:
                                                                 foreign lpvm access(~#right##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#right#f16##0:wybe.int) @multictr:nn:nn
-                                                                foreign llvm icmp_eq(~#left#f16##0:wybe.int, ~#right#f16##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                                                                foreign llvm icmp_eq(~#left#f16##0:wybe.int, ~#right#f16##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
@@ -699,28 +699,28 @@ entry:
 
                                             1:
                                                 foreign lpvm access(~#left##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#left#f15##0:wybe.int) @multictr:nn:nn
-                                                foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#158##0:wybe.bool)
-                                                case ~tmp#158##0:wybe.bool of
+                                                foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#107##0:wybe.bool)
+                                                case ~tmp#107##0:wybe.bool of
                                                 0:
-                                                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                 1:
-                                                    foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#159##0:wybe.int)
-                                                    foreign llvm icmp_eq(~tmp#159##0:wybe.int, 7:wybe.int, ?tmp#160##0:wybe.bool)
-                                                    case ~tmp#160##0:wybe.bool of
+                                                    foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#108##0:wybe.int)
+                                                    foreign llvm icmp_eq(~tmp#108##0:wybe.int, 7:wybe.int, ?tmp#109##0:wybe.bool)
+                                                    case ~tmp#109##0:wybe.bool of
                                                     0:
-                                                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                        foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                     1:
-                                                        foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#161##0:16 bit unsigned) @multictr:nn:nn
-                                                        foreign llvm icmp_eq(~tmp#161##0:16 bit unsigned, 14:16 bit unsigned, ?tmp#162##0:wybe.bool)
-                                                        case ~tmp#162##0:wybe.bool of
+                                                        foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#110##0:16 bit unsigned) @multictr:nn:nn
+                                                        foreign llvm icmp_eq(~tmp#110##0:16 bit unsigned, 14:16 bit unsigned, ?tmp#111##0:wybe.bool)
+                                                        case ~tmp#111##0:wybe.bool of
                                                         0:
-                                                            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                            foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                         1:
                                                             foreign lpvm access(~#right##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#right#f15##0:wybe.int) @multictr:nn:nn
-                                                            foreign llvm icmp_eq(~#left#f15##0:wybe.int, ~#right#f15##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                                                            foreign llvm icmp_eq(~#left#f15##0:wybe.int, ~#right#f15##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
@@ -728,28 +728,28 @@ entry:
 
                                         1:
                                             foreign lpvm access(~#left##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#left#f14##0:wybe.int) @multictr:nn:nn
-                                            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#166##0:wybe.bool)
-                                            case ~tmp#166##0:wybe.bool of
+                                            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#115##0:wybe.bool)
+                                            case ~tmp#115##0:wybe.bool of
                                             0:
-                                                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                             1:
-                                                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#167##0:wybe.int)
-                                                foreign llvm icmp_eq(~tmp#167##0:wybe.int, 7:wybe.int, ?tmp#168##0:wybe.bool)
-                                                case ~tmp#168##0:wybe.bool of
+                                                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#116##0:wybe.int)
+                                                foreign llvm icmp_eq(~tmp#116##0:wybe.int, 7:wybe.int, ?tmp#117##0:wybe.bool)
+                                                case ~tmp#117##0:wybe.bool of
                                                 0:
-                                                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                 1:
-                                                    foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#169##0:16 bit unsigned) @multictr:nn:nn
-                                                    foreign llvm icmp_eq(~tmp#169##0:16 bit unsigned, 13:16 bit unsigned, ?tmp#170##0:wybe.bool)
-                                                    case ~tmp#170##0:wybe.bool of
+                                                    foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#118##0:16 bit unsigned) @multictr:nn:nn
+                                                    foreign llvm icmp_eq(~tmp#118##0:16 bit unsigned, 13:16 bit unsigned, ?tmp#119##0:wybe.bool)
+                                                    case ~tmp#119##0:wybe.bool of
                                                     0:
-                                                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                        foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                     1:
                                                         foreign lpvm access(~#right##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#right#f14##0:wybe.int) @multictr:nn:nn
-                                                        foreign llvm icmp_eq(~#left#f14##0:wybe.int, ~#right#f14##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                                                        foreign llvm icmp_eq(~#left#f14##0:wybe.int, ~#right#f14##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
@@ -757,28 +757,28 @@ entry:
 
                                     1:
                                         foreign lpvm access(~#left##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#left#f13##0:wybe.int) @multictr:nn:nn
-                                        foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#174##0:wybe.bool)
-                                        case ~tmp#174##0:wybe.bool of
+                                        foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#123##0:wybe.bool)
+                                        case ~tmp#123##0:wybe.bool of
                                         0:
-                                            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                            foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                         1:
-                                            foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#175##0:wybe.int)
-                                            foreign llvm icmp_eq(~tmp#175##0:wybe.int, 7:wybe.int, ?tmp#176##0:wybe.bool)
-                                            case ~tmp#176##0:wybe.bool of
+                                            foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#124##0:wybe.int)
+                                            foreign llvm icmp_eq(~tmp#124##0:wybe.int, 7:wybe.int, ?tmp#125##0:wybe.bool)
+                                            case ~tmp#125##0:wybe.bool of
                                             0:
-                                                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                             1:
-                                                foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#177##0:16 bit unsigned) @multictr:nn:nn
-                                                foreign llvm icmp_eq(~tmp#177##0:16 bit unsigned, 12:16 bit unsigned, ?tmp#178##0:wybe.bool)
-                                                case ~tmp#178##0:wybe.bool of
+                                                foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#126##0:16 bit unsigned) @multictr:nn:nn
+                                                foreign llvm icmp_eq(~tmp#126##0:16 bit unsigned, 12:16 bit unsigned, ?tmp#127##0:wybe.bool)
+                                                case ~tmp#127##0:wybe.bool of
                                                 0:
-                                                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                                 1:
                                                     foreign lpvm access(~#right##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#right#f13##0:wybe.int) @multictr:nn:nn
-                                                    foreign llvm icmp_eq(~#left#f13##0:wybe.int, ~#right#f13##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                                                    foreign llvm icmp_eq(~#left#f13##0:wybe.int, ~#right#f13##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
@@ -786,28 +786,28 @@ entry:
 
                                 1:
                                     foreign lpvm access(~#left##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#left#f12##0:wybe.int) @multictr:nn:nn
-                                    foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#182##0:wybe.bool)
-                                    case ~tmp#182##0:wybe.bool of
+                                    foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#131##0:wybe.bool)
+                                    case ~tmp#131##0:wybe.bool of
                                     0:
-                                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                        foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                     1:
-                                        foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#183##0:wybe.int)
-                                        foreign llvm icmp_eq(~tmp#183##0:wybe.int, 7:wybe.int, ?tmp#184##0:wybe.bool)
-                                        case ~tmp#184##0:wybe.bool of
+                                        foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#132##0:wybe.int)
+                                        foreign llvm icmp_eq(~tmp#132##0:wybe.int, 7:wybe.int, ?tmp#133##0:wybe.bool)
+                                        case ~tmp#133##0:wybe.bool of
                                         0:
-                                            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                            foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                         1:
-                                            foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#185##0:16 bit unsigned) @multictr:nn:nn
-                                            foreign llvm icmp_eq(~tmp#185##0:16 bit unsigned, 11:16 bit unsigned, ?tmp#186##0:wybe.bool)
-                                            case ~tmp#186##0:wybe.bool of
+                                            foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#134##0:16 bit unsigned) @multictr:nn:nn
+                                            foreign llvm icmp_eq(~tmp#134##0:16 bit unsigned, 11:16 bit unsigned, ?tmp#135##0:wybe.bool)
+                                            case ~tmp#135##0:wybe.bool of
                                             0:
-                                                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                             1:
                                                 foreign lpvm access(~#right##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#right#f12##0:wybe.int) @multictr:nn:nn
-                                                foreign llvm icmp_eq(~#left#f12##0:wybe.int, ~#right#f12##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                                                foreign llvm icmp_eq(~#left#f12##0:wybe.int, ~#right#f12##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
@@ -815,28 +815,28 @@ entry:
 
                             1:
                                 foreign lpvm access(~#left##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#left#f11##0:wybe.int) @multictr:nn:nn
-                                foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#190##0:wybe.bool)
-                                case ~tmp#190##0:wybe.bool of
+                                foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#139##0:wybe.bool)
+                                case ~tmp#139##0:wybe.bool of
                                 0:
-                                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                 1:
-                                    foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#191##0:wybe.int)
-                                    foreign llvm icmp_eq(~tmp#191##0:wybe.int, 7:wybe.int, ?tmp#192##0:wybe.bool)
-                                    case ~tmp#192##0:wybe.bool of
+                                    foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#140##0:wybe.int)
+                                    foreign llvm icmp_eq(~tmp#140##0:wybe.int, 7:wybe.int, ?tmp#141##0:wybe.bool)
+                                    case ~tmp#141##0:wybe.bool of
                                     0:
-                                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                        foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                     1:
-                                        foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#193##0:16 bit unsigned) @multictr:nn:nn
-                                        foreign llvm icmp_eq(~tmp#193##0:16 bit unsigned, 10:16 bit unsigned, ?tmp#194##0:wybe.bool)
-                                        case ~tmp#194##0:wybe.bool of
+                                        foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#142##0:16 bit unsigned) @multictr:nn:nn
+                                        foreign llvm icmp_eq(~tmp#142##0:16 bit unsigned, 10:16 bit unsigned, ?tmp#143##0:wybe.bool)
+                                        case ~tmp#143##0:wybe.bool of
                                         0:
-                                            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                            foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                         1:
                                             foreign lpvm access(~#right##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#right#f11##0:wybe.int) @multictr:nn:nn
-                                            foreign llvm icmp_eq(~#left#f11##0:wybe.int, ~#right#f11##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                                            foreign llvm icmp_eq(~#left#f11##0:wybe.int, ~#right#f11##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
@@ -844,28 +844,28 @@ entry:
 
                         1:
                             foreign lpvm access(~#left##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#left#f10##0:wybe.int) @multictr:nn:nn
-                            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#198##0:wybe.bool)
-                            case ~tmp#198##0:wybe.bool of
+                            foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#147##0:wybe.bool)
+                            case ~tmp#147##0:wybe.bool of
                             0:
-                                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                             1:
-                                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#199##0:wybe.int)
-                                foreign llvm icmp_eq(~tmp#199##0:wybe.int, 7:wybe.int, ?tmp#200##0:wybe.bool)
-                                case ~tmp#200##0:wybe.bool of
+                                foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#148##0:wybe.int)
+                                foreign llvm icmp_eq(~tmp#148##0:wybe.int, 7:wybe.int, ?tmp#149##0:wybe.bool)
+                                case ~tmp#149##0:wybe.bool of
                                 0:
-                                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                 1:
-                                    foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#201##0:16 bit unsigned) @multictr:nn:nn
-                                    foreign llvm icmp_eq(~tmp#201##0:16 bit unsigned, 9:16 bit unsigned, ?tmp#202##0:wybe.bool)
-                                    case ~tmp#202##0:wybe.bool of
+                                    foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#150##0:16 bit unsigned) @multictr:nn:nn
+                                    foreign llvm icmp_eq(~tmp#150##0:16 bit unsigned, 9:16 bit unsigned, ?tmp#151##0:wybe.bool)
+                                    case ~tmp#151##0:wybe.bool of
                                     0:
-                                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                        foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                                     1:
                                         foreign lpvm access(~#right##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#right#f10##0:wybe.int) @multictr:nn:nn
-                                        foreign llvm icmp_eq(~#left#f10##0:wybe.int, ~#right#f10##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                                        foreign llvm icmp_eq(~#left#f10##0:wybe.int, ~#right#f10##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
@@ -874,28 +874,28 @@ entry:
 
                 1:
                     foreign lpvm access(~#left##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#left#f09##0:wybe.int) @multictr:nn:nn
-                    foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#206##0:wybe.bool)
-                    case ~tmp#206##0:wybe.bool of
+                    foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#155##0:wybe.bool)
+                    case ~tmp#155##0:wybe.bool of
                     0:
-                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                        foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                     1:
-                        foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#207##0:wybe.int)
-                        foreign llvm icmp_eq(~tmp#207##0:wybe.int, 7:wybe.int, ?tmp#208##0:wybe.bool)
-                        case ~tmp#208##0:wybe.bool of
+                        foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#156##0:wybe.int)
+                        foreign llvm icmp_eq(~tmp#156##0:wybe.int, 7:wybe.int, ?tmp#157##0:wybe.bool)
+                        case ~tmp#157##0:wybe.bool of
                         0:
-                            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                            foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                         1:
-                            foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#209##0:16 bit unsigned) @multictr:nn:nn
-                            foreign llvm icmp_eq(~tmp#209##0:16 bit unsigned, 8:16 bit unsigned, ?tmp#210##0:wybe.bool)
-                            case ~tmp#210##0:wybe.bool of
+                            foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#158##0:16 bit unsigned) @multictr:nn:nn
+                            foreign llvm icmp_eq(~tmp#158##0:16 bit unsigned, 8:16 bit unsigned, ?tmp#159##0:wybe.bool)
+                            case ~tmp#159##0:wybe.bool of
                             0:
-                                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                                foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                             1:
                                 foreign lpvm access(~#right##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#right#f09##0:wybe.int) @multictr:nn:nn
-                                foreign llvm icmp_eq(~#left#f09##0:wybe.int, ~#right#f09##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                                foreign llvm icmp_eq(~#left#f09##0:wybe.int, ~#right#f09##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
@@ -903,28 +903,28 @@ entry:
 
             1:
                 foreign lpvm access(~#left##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#left#f08##0:wybe.int) @multictr:nn:nn
-                foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#214##0:wybe.bool)
-                case ~tmp#214##0:wybe.bool of
+                foreign llvm icmp_uge(#right##0:wybe.int, 4:wybe.int, ?tmp#163##0:wybe.bool)
+                case ~tmp#163##0:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                 1:
-                    foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#215##0:wybe.int)
-                    foreign llvm icmp_eq(~tmp#215##0:wybe.int, 7:wybe.int, ?tmp#216##0:wybe.bool)
-                    case ~tmp#216##0:wybe.bool of
+                    foreign llvm and(#right##0:wybe.int, 7:wybe.int, ?tmp#164##0:wybe.int)
+                    foreign llvm icmp_eq(~tmp#164##0:wybe.int, 7:wybe.int, ?tmp#165##0:wybe.bool)
+                    case ~tmp#165##0:wybe.bool of
                     0:
-                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                        foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                     1:
-                        foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#217##0:16 bit unsigned) @multictr:nn:nn
-                        foreign llvm icmp_eq(~tmp#217##0:16 bit unsigned, 7:16 bit unsigned, ?tmp#218##0:wybe.bool)
-                        case ~tmp#218##0:wybe.bool of
+                        foreign lpvm access(#right##0:multictr.complicated, -7:wybe.int, 16:wybe.int, 7:wybe.int, ?tmp#166##0:16 bit unsigned) @multictr:nn:nn
+                        foreign llvm icmp_eq(~tmp#166##0:16 bit unsigned, 7:16 bit unsigned, ?tmp#167##0:wybe.bool)
+                        case ~tmp#167##0:wybe.bool of
                         0:
-                            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                            foreign llvm move(0:wybe.bool, ?#success##19:wybe.bool)
 
                         1:
                             foreign lpvm access(~#right##0:multictr.complicated, 1:wybe.int, 16:wybe.int, 7:wybe.int, ?#right#f08##0:wybe.int) @multictr:nn:nn
-                            foreign llvm icmp_eq(~#left#f08##0:wybe.int, ~#right#f08##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                            foreign llvm icmp_eq(~#left#f08##0:wybe.int, ~#right#f08##0:wybe.int, ?#success##19:wybe.bool) @int:nn:nn
 
 
 
@@ -2674,11 +2674,11 @@ winter(?#result##0:multictr.complicated)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: multictr.complicated.~=<0>
-~=(#left##0:multictr.complicated, #right##0:multictr.complicated, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:multictr.complicated, #right##0:multictr.complicated, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    multictr.complicated.=<0>(~#left##0:multictr.complicated, ~#right##0:multictr.complicated, ?tmp#0##0:wybe.bool) #0
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    multictr.complicated.=<0>(~#left##0:multictr.complicated, ~#right##0:multictr.complicated, ?#success##0:wybe.bool) #0
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -5256,11 +5256,11 @@ value([#rec##0:multictr.length], ?#rec##2:multictr.length, #field##0:wybe.float)
 
 ~= > public {inline} (0 calls)
 0: multictr.length.~=<0>
-~=(#left##0:multictr.length, #right##0:multictr.length, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:multictr.length, #right##0:multictr.length, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm icmp_eq(~#left##0:multictr.length, ~#right##0:multictr.length, ?tmp#0##0:wybe.bool)
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm icmp_eq(~#left##0:multictr.length, ~#right##0:multictr.length, ?#success##0:wybe.bool)
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -5336,24 +5336,24 @@ entry:
 
 = > public (1 calls)
 0: multictr.maybe_int.=<0>
-=(#left##0:multictr.maybe_int, #right##0:multictr.maybe_int, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:multictr.maybe_int, #right##0:multictr.maybe_int, ?#success##3:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
     foreign llvm icmp_ne(#left##0:wybe.int, 0:wybe.int, ?tmp#0##0:wybe.bool)
     case ~tmp#0##0:wybe.bool of
     0:
-        foreign llvm icmp_eq(~#right##0:multictr.maybe_int, 0:multictr.maybe_int, ?#success##0:wybe.bool)
+        foreign llvm icmp_eq(~#right##0:multictr.maybe_int, 0:multictr.maybe_int, ?#success##3:wybe.bool)
 
     1:
         foreign lpvm access(~#left##0:multictr.maybe_int, 0:wybe.int, 8:wybe.int, 0:wybe.int, ?#left#value##0:wybe.int) @multictr:nn:nn
-        foreign llvm icmp_ne(#right##0:wybe.int, 0:wybe.int, ?tmp#8##0:wybe.bool)
-        case ~tmp#8##0:wybe.bool of
+        foreign llvm icmp_ne(#right##0:wybe.int, 0:wybe.int, ?tmp#5##0:wybe.bool)
+        case ~tmp#5##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##3:wybe.bool)
 
         1:
             foreign lpvm access(~#right##0:multictr.maybe_int, 0:wybe.int, 8:wybe.int, 0:wybe.int, ?#right#value##0:wybe.int) @multictr:nn:nn
-            foreign llvm icmp_eq(~#left#value##0:wybe.int, ~#right#value##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+            foreign llvm icmp_eq(~#left#value##0:wybe.int, ~#right#value##0:wybe.int, ?#success##3:wybe.bool) @int:nn:nn
 
 
 
@@ -5424,11 +5424,11 @@ value(#rec##0:multictr.maybe_int, ?#rec##1:multictr.maybe_int, #field##0:wybe.in
 
 ~= > public {inline} (0 calls)
 0: multictr.maybe_int.~=<0>
-~=(#left##0:multictr.maybe_int, #right##0:multictr.maybe_int, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:multictr.maybe_int, #right##0:multictr.maybe_int, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    multictr.maybe_int.=<0>(~#left##0:multictr.maybe_int, ~#right##0:multictr.maybe_int, ?tmp#0##0:wybe.bool) #0
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    multictr.maybe_int.=<0>(~#left##0:multictr.maybe_int, ~#right##0:multictr.maybe_int, ?#success##0:wybe.bool) #0
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -5569,43 +5569,43 @@ entry:
 
 = > public (1 calls)
 0: multictr.number.=<0>
-=(#left##0:multictr.number, #right##0:multictr.number, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:multictr.number, #right##0:multictr.number, ?#success##4:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm and(#left##0:wybe.int, 1:wybe.int, ?tmp#8##0:wybe.int)
-    foreign llvm icmp_eq(tmp#8##0:wybe.int, 0:wybe.int, ?tmp#9##0:wybe.bool)
-    case ~tmp#9##0:wybe.bool of
+    foreign llvm and(#left##0:wybe.int, 1:wybe.int, ?tmp#2##0:wybe.int)
+    foreign llvm icmp_eq(tmp#2##0:wybe.int, 0:wybe.int, ?tmp#3##0:wybe.bool)
+    case ~tmp#3##0:wybe.bool of
     0:
-        foreign llvm icmp_eq(~tmp#8##0:wybe.int, 1:wybe.int, ?tmp#12##0:wybe.bool)
-        case ~tmp#12##0:wybe.bool of
+        foreign llvm icmp_eq(~tmp#2##0:wybe.int, 1:wybe.int, ?tmp#6##0:wybe.bool)
+        case ~tmp#6##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##4:wybe.bool)
 
         1:
             foreign lpvm access(~#left##0:multictr.number, -1:wybe.int, 8:wybe.int, 1:wybe.int, ?#left#float_value##0:wybe.float) @multictr:nn:nn
-            foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#14##0:wybe.int)
-            foreign llvm icmp_eq(~tmp#14##0:wybe.int, 1:wybe.int, ?tmp#15##0:wybe.bool)
-            case ~tmp#15##0:wybe.bool of
+            foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#8##0:wybe.int)
+            foreign llvm icmp_eq(~tmp#8##0:wybe.int, 1:wybe.int, ?tmp#9##0:wybe.bool)
+            case ~tmp#9##0:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##4:wybe.bool)
 
             1:
                 foreign lpvm access(~#right##0:multictr.number, -1:wybe.int, 8:wybe.int, 1:wybe.int, ?#right#float_value##0:wybe.float) @multictr:nn:nn
-                foreign llvm fcmp_eq(~#left#float_value##0:wybe.float, ~#right#float_value##0:wybe.float, ?#success##0:wybe.bool) @float:nn:nn
+                foreign llvm fcmp_eq(~#left#float_value##0:wybe.float, ~#right#float_value##0:wybe.float, ?#success##4:wybe.bool) @float:nn:nn
 
 
 
     1:
         foreign lpvm access(~#left##0:multictr.number, 0:wybe.int, 8:wybe.int, 0:wybe.int, ?#left#int_value##0:wybe.int) @multictr:nn:nn
-        foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#19##0:wybe.int)
-        foreign llvm icmp_eq(~tmp#19##0:wybe.int, 0:wybe.int, ?tmp#20##0:wybe.bool)
-        case ~tmp#20##0:wybe.bool of
+        foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#13##0:wybe.int)
+        foreign llvm icmp_eq(~tmp#13##0:wybe.int, 0:wybe.int, ?tmp#14##0:wybe.bool)
+        case ~tmp#14##0:wybe.bool of
         0:
-            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+            foreign llvm move(0:wybe.bool, ?#success##4:wybe.bool)
 
         1:
             foreign lpvm access(~#right##0:multictr.number, 0:wybe.int, 8:wybe.int, 0:wybe.int, ?#right#int_value##0:wybe.int) @multictr:nn:nn
-            foreign llvm icmp_eq(~#left#int_value##0:wybe.int, ~#right#int_value##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+            foreign llvm icmp_eq(~#left#int_value##0:wybe.int, ~#right#int_value##0:wybe.int, ?#success##4:wybe.bool) @int:nn:nn
 
 
 
@@ -5731,11 +5731,11 @@ int_value(#rec##0:multictr.number, ?#rec##1:multictr.number, #field##0:wybe.int,
 
 ~= > public {inline} (0 calls)
 0: multictr.number.~=<0>
-~=(#left##0:multictr.number, #right##0:multictr.number, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:multictr.number, #right##0:multictr.number, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    multictr.number.=<0>(~#left##0:multictr.number, ~#right##0:multictr.number, ?tmp#0##0:wybe.bool) #0
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    multictr.number.=<0>(~#left##0:multictr.number, ~#right##0:multictr.number, ?#success##0:wybe.bool) #0
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -6002,11 +6002,11 @@ perhaps(?content##0:multictr.maybe_int, #result##0:multictr.perhaps)<{}; {}; {}>
 
 ~= > public {inline} (0 calls)
 0: multictr.perhaps.~=<0>
-~=(#left##0:multictr.perhaps, #right##0:multictr.perhaps, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:multictr.perhaps, #right##0:multictr.perhaps, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm icmp_eq(~#left##0:multictr.perhaps, ~#right##0:multictr.perhaps, ?tmp#0##0:wybe.bool)
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm icmp_eq(~#left##0:multictr.perhaps, ~#right##0:multictr.perhaps, ?#success##0:wybe.bool)
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -6198,11 +6198,11 @@ r9(?#result##0:multictr.rank)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: multictr.rank.~=<0>
-~=(#left##0:multictr.rank, #right##0:multictr.rank, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:multictr.rank, #right##0:multictr.rank, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm icmp_eq(~#left##0:multictr.rank, ~#right##0:multictr.rank, ?tmp#0##0:wybe.bool)
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm icmp_eq(~#left##0:multictr.rank, ~#right##0:multictr.rank, ?#success##0:wybe.bool)
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -6334,49 +6334,49 @@ entry:
 
 = > public (1 calls)
 0: multictr.simple.=<0>
-=(#left##0:multictr.simple, #right##0:multictr.simple, ?#success##0:wybe.bool)<{}; {}; {}>:
+=(#left##0:multictr.simple, #right##0:multictr.simple, ?#success##5:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
     foreign llvm icmp_ne(#left##0:wybe.int, 0:wybe.int, ?tmp#0##0:wybe.bool)
     case ~tmp#0##0:wybe.bool of
     0:
-        foreign llvm icmp_eq(~#right##0:multictr.simple, 0:multictr.simple, ?#success##0:wybe.bool)
+        foreign llvm icmp_eq(~#right##0:multictr.simple, 0:multictr.simple, ?#success##5:wybe.bool)
 
     1:
-        foreign llvm and(#left##0:wybe.int, 1:wybe.int, ?tmp#11##0:wybe.int)
-        foreign llvm icmp_eq(tmp#11##0:wybe.int, 0:wybe.int, ?tmp#12##0:wybe.bool)
-        case ~tmp#12##0:wybe.bool of
+        foreign llvm and(#left##0:wybe.int, 1:wybe.int, ?tmp#4##0:wybe.int)
+        foreign llvm icmp_eq(tmp#4##0:wybe.int, 0:wybe.int, ?tmp#5##0:wybe.bool)
+        case ~tmp#5##0:wybe.bool of
         0:
-            foreign llvm icmp_eq(~tmp#11##0:wybe.int, 1:wybe.int, ?tmp#16##0:wybe.bool)
-            case ~tmp#16##0:wybe.bool of
+            foreign llvm icmp_eq(~tmp#4##0:wybe.int, 1:wybe.int, ?tmp#9##0:wybe.bool)
+            case ~tmp#9##0:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##5:wybe.bool)
 
             1:
                 foreign lpvm access(#left##0:multictr.simple, -1:wybe.int, 16:wybe.int, 1:wybe.int, ?#left#two_field1##0:wybe.int) @multictr:nn:nn
                 foreign lpvm access(~#left##0:multictr.simple, 7:wybe.int, 16:wybe.int, 1:wybe.int, ?#left#two_field2##0:wybe.int) @multictr:nn:nn
-                foreign llvm icmp_ne(#right##0:wybe.int, 0:wybe.int, ?tmp#18##0:wybe.bool)
-                case ~tmp#18##0:wybe.bool of
+                foreign llvm icmp_ne(#right##0:wybe.int, 0:wybe.int, ?tmp#11##0:wybe.bool)
+                case ~tmp#11##0:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##5:wybe.bool)
 
                 1:
-                    foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#19##0:wybe.int)
-                    foreign llvm icmp_eq(~tmp#19##0:wybe.int, 1:wybe.int, ?tmp#20##0:wybe.bool)
-                    case ~tmp#20##0:wybe.bool of
+                    foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#12##0:wybe.int)
+                    foreign llvm icmp_eq(~tmp#12##0:wybe.int, 1:wybe.int, ?tmp#13##0:wybe.bool)
+                    case ~tmp#13##0:wybe.bool of
                     0:
-                        foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                        foreign llvm move(0:wybe.bool, ?#success##5:wybe.bool)
 
                     1:
                         foreign lpvm access(#right##0:multictr.simple, -1:wybe.int, 16:wybe.int, 1:wybe.int, ?#right#two_field1##0:wybe.int) @multictr:nn:nn
                         foreign lpvm access(~#right##0:multictr.simple, 7:wybe.int, 16:wybe.int, 1:wybe.int, ?#right#two_field2##0:wybe.int) @multictr:nn:nn
-                        foreign llvm icmp_eq(~#left#two_field1##0:wybe.int, ~#right#two_field1##0:wybe.int, ?tmp#5##0:wybe.bool) @int:nn:nn
-                        case ~tmp#5##0:wybe.bool of
+                        foreign llvm icmp_eq(~#left#two_field1##0:wybe.int, ~#right#two_field1##0:wybe.int, ?#success##3:wybe.bool) @int:nn:nn
+                        case ~#success##3:wybe.bool of
                         0:
-                            foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                            foreign llvm move(0:wybe.bool, ?#success##5:wybe.bool)
 
                         1:
-                            foreign llvm icmp_eq(~#left#two_field2##0:wybe.int, ~#right#two_field2##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                            foreign llvm icmp_eq(~#left#two_field2##0:wybe.int, ~#right#two_field2##0:wybe.int, ?#success##5:wybe.bool) @int:nn:nn
 
 
 
@@ -6384,21 +6384,21 @@ entry:
 
         1:
             foreign lpvm access(~#left##0:multictr.simple, 0:wybe.int, 8:wybe.int, 0:wybe.int, ?#left#one_field##0:wybe.int) @multictr:nn:nn
-            foreign llvm icmp_ne(#right##0:wybe.int, 0:wybe.int, ?tmp#26##0:wybe.bool)
-            case ~tmp#26##0:wybe.bool of
+            foreign llvm icmp_ne(#right##0:wybe.int, 0:wybe.int, ?tmp#19##0:wybe.bool)
+            case ~tmp#19##0:wybe.bool of
             0:
-                foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                foreign llvm move(0:wybe.bool, ?#success##5:wybe.bool)
 
             1:
-                foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#27##0:wybe.int)
-                foreign llvm icmp_eq(~tmp#27##0:wybe.int, 0:wybe.int, ?tmp#28##0:wybe.bool)
-                case ~tmp#28##0:wybe.bool of
+                foreign llvm and(#right##0:wybe.int, 1:wybe.int, ?tmp#20##0:wybe.int)
+                foreign llvm icmp_eq(~tmp#20##0:wybe.int, 0:wybe.int, ?tmp#21##0:wybe.bool)
+                case ~tmp#21##0:wybe.bool of
                 0:
-                    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+                    foreign llvm move(0:wybe.bool, ?#success##5:wybe.bool)
 
                 1:
                     foreign lpvm access(~#right##0:multictr.simple, 0:wybe.int, 8:wybe.int, 0:wybe.int, ?#right#one_field##0:wybe.int) @multictr:nn:nn
-                    foreign llvm icmp_eq(~#left#one_field##0:wybe.int, ~#right#one_field##0:wybe.int, ?#success##0:wybe.bool) @int:nn:nn
+                    foreign llvm icmp_eq(~#left#one_field##0:wybe.int, ~#right#one_field##0:wybe.int, ?#success##5:wybe.bool) @int:nn:nn
 
 
 
@@ -6636,11 +6636,11 @@ zero(?#result##0:multictr.simple)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: multictr.simple.~=<0>
-~=(#left##0:multictr.simple, #right##0:multictr.simple, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:multictr.simple, #right##0:multictr.simple, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    multictr.simple.=<0>(~#left##0:multictr.simple, ~#right##0:multictr.simple, ?tmp#0##0:wybe.bool) #0
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    multictr.simple.=<0>(~#left##0:multictr.simple, ~#right##0:multictr.simple, ?#success##0:wybe.bool) #0
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -7056,11 +7056,11 @@ spades(?#result##0:multictr.suit)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: multictr.suit.~=<0>
-~=(#left##0:multictr.suit, #right##0:multictr.suit, ?#success##0:wybe.bool)<{}; {}; {}>:
+~=(#left##0:multictr.suit, #right##0:multictr.suit, ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm icmp_eq(~#left##0:multictr.suit, ~#right##0:multictr.suit, ?tmp#0##0:wybe.bool)
-    foreign llvm xor(~tmp#0##0:wybe.bool, 1:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm icmp_eq(~#left##0:multictr.suit, ~#right##0:multictr.suit, ?#success##0:wybe.bool)
+    foreign llvm xor(~#success##0:wybe.bool, 1:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
@@ -7144,10 +7144,10 @@ unit(?#result##0:multictr.unit)<{}; {}; {}>:
 
 ~= > public {inline} (0 calls)
 0: multictr.unit.~=<0>
-~=([#left##0:multictr.unit], [#right##0:multictr.unit], ?#success##0:wybe.bool)<{}; {}; {}>:
+~=([#left##0:multictr.unit], [#right##0:multictr.unit], ?#success##1:wybe.bool)<{}; {}; {}>:
   AliasPairs: []
   InterestingCallProperties: []
-    foreign llvm move(0:wybe.bool, ?#success##0:wybe.bool)
+    foreign llvm move(0:wybe.bool, ?#success##1:wybe.bool)
 
   LLVM code       :
 
